@@ -72,6 +72,18 @@ AS_IF([test "x$enable_turn_off_ucd90160_access" != "xyes"],
       AC_DEFINE_UNQUOTED([UCD90160_DEVICE_ACCESS], ["$UCD90160_DEVICE_ACCESS"], [Turn off UCD90160 hardware access])
 )
 
+AC_ARG_ENABLE([turn-off-mihawkcpld-access],
+    AS_HELP_STRING([--enable-turn-off-mihawkcpld-access], [Turn off MIHAWKCPLD hardware access])
+)
+
+AC_ARG_VAR(MIHAWKCPLD_DEVICE_ACCESS, [Turn off MIHAWKCPLD hardware access])
+
+# Add define MIHAWKCPLD_DEVICE_ACCESS
+AS_IF([test "x$enable_turn_off_mihawkcpld_access" != "xyes"],
+      [MIHAWKCPLD_DEVICE_ACCESS="yes"]
+      AC_DEFINE_UNQUOTED([MIHAWKCPLD_DEVICE_ACCESS], ["$MIHAWKCPLD_DEVICE_ACCESS"], [Turn off MIHAWKCPLD hardware access])
+)
+
 AC_ARG_VAR(UCD90160_DEF_YAML_FILE,
            [The sequencer definition file to use])
 AS_IF([test "x$UCD90160_DEF_YAML_FILE" == "x"],
