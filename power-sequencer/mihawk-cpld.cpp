@@ -36,6 +36,9 @@ const static constexpr size_t StatusReg_1 = 0x20;
 // SMLink Status Register(Power-on error code Register)
 const static constexpr size_t StatusReg_2 = 0x21;
 
+// SMLink Status Register(PSU register code Register)
+const static constexpr size_t StatusReg_3 = 0x05;
+
 using namespace std;
 namespace witherspoon
 {
@@ -56,6 +59,7 @@ MIHAWKCPLD::MIHAWKCPLD(size_t instance, sdbusplus::bus::bus& bus) :
 void MIHAWKCPLD::onFailure()
 {
     bool poweronError = checkPoweronFault();
+
     // If the interrupt of power_on_error is switch on,
     // read CPLD_register error code to analyze and report the error event.
     if (poweronError)
@@ -217,54 +221,21 @@ void MIHAWKCPLD::onFailure()
 
 void MIHAWKCPLD::analyze()
 {
-}
-
-// Read CPLD_register error code and return the result to analyze.
-int MIHAWKCPLD::readFromCPLDPSUErrorCode(int bus, int Addr)
-{
-    std::string i2cBus = "/dev/i2c-" + std::to_string(bus);
-
-    // open i2c device(CPLD-PSU-register table)
-    int fd = open(i2cBus.c_str(), O_RDWR | O_CLOEXEC);
-    if (fd < 0)
+    //analyze psu status when power_on fault.
+    auto poweronError = checkPoweronFault();
+    if(poweronError)
     {
-        std::cerr << "Unable to open i2c device(CPLD_register) \n";
+        int errorcode;
+        errorcode = checkPSUDCpgood();
+        if (!((errorcode >> 1) & 1) && !((errorcode >> 3) & 1) )
+        {
+            report<PsuErrorCode0>();
+        }
+        else if (!((errorcode >> 2) & 1) && !((errorcode >> 4) & 1))
+        {
+            report<PsuErrorCode1>();
+        }
     }
-
-    // set i2c slave address
-    if (ioctl(fd, I2C_SLAVE_FORCE, Addr) < 0)
-    {
-        std::cerr << "Unable to set device address \n";
-        close(fd);
-    }
-
-    // check whether support i2c function
-    unsigned long funcs = 0;
-    if (ioctl(fd, I2C_FUNCS, &funcs) < 0)
-    {
-        std::cerr << "Not support I2C_FUNCS \n";
-        close(fd);
-    }
-
-    // check whether support i2c-read function
-    if (!(funcs & I2C_FUNC_SMBUS_READ_BYTE_DATA))
-    {
-        std::cerr << "Not support I2C_FUNC_SMBUS_READ_BYTE_DATA \n";
-        close(fd);
-    }
-
-    int statusValue;
-
-    statusValue = i2c_smbus_read_byte_data(fd, StatusReg_2);
-    close(fd);
-
-    if (statusValue < 0)
-    {
-        statusValue = 0;
-    }
-
-    // return the i2c-read data
-    return statusValue;
 }
 
 // Check for PoweronFault
@@ -303,7 +274,7 @@ bool MIHAWKCPLD::checkPoweronFault()
     }
 
     int statusValue_1;
-
+    
     statusValue_1 = i2c_smbus_read_byte_data(fd, StatusReg_1);
     close(fd);
 
@@ -313,7 +284,7 @@ bool MIHAWKCPLD::checkPoweronFault()
         result = 0;
     }
 
-    if((statusValue_1 >> 5) & 1)
+    if ((statusValue_1 >> 5) & 1)
     {
         // If power_on-interrupt-bit is read as 1,
         // switch on the flag.
@@ -325,6 +296,95 @@ bool MIHAWKCPLD::checkPoweronFault()
     }
 
     return result;
+}
+
+// Read CPLD_register error code and return the result to analyze.
+int MIHAWKCPLD::readFromCPLDPSUErrorCode(int bus, int Addr)
+{
+    std::string i2cBus = "/dev/i2c-" + std::to_string(bus);
+
+    // open i2c device(CPLD-PSU-register table)
+    int fd = open(i2cBus.c_str(), O_RDWR | O_CLOEXEC);
+    if (fd < 0)
+    {
+        std::cerr << "Unable to open i2c device(CPLD_register) \n";
+    }
+
+    // set i2c slave address
+    if (ioctl(fd, I2C_SLAVE_FORCE, Addr) < 0)
+    {
+        std::cerr << "Unable to set device address \n";
+        close(fd);
+    }
+
+    // check whether support i2c function
+    unsigned long funcs = 0;
+    if (ioctl(fd, I2C_FUNCS, &funcs) < 0)
+    {
+        std::cerr << "Not support I2C_FUNCS \n";
+        close(fd);
+    }
+
+    // check whether support i2c-read function
+    if (!(funcs & I2C_FUNC_SMBUS_READ_BYTE_DATA))
+    {
+        std::cerr << "Not support I2C_FUNC_SMBUS_READ_BYTE_DATA \n";
+        close(fd);
+    }
+
+    int statusValue_2;
+    statusValue_2 = i2c_smbus_read_byte_data(fd, StatusReg_2);
+    close(fd);
+
+    if (statusValue_2 < 0)
+    {
+        statusValue_2 = 0;
+    }
+
+    // return the i2c-read data
+    return statusValue_2;
+}
+
+// Check PSU_DC_PGOOD state form PSU register via CPLD
+int MIHAWKCPLD::checkPSUDCpgood()
+{
+    std::string i2cBus = "/dev/i2c-" + std::to_string(busId);
+
+    // open i2c device(CPLD-PSU-register table)
+    int fd = open(i2cBus.c_str(), O_RDWR | O_CLOEXEC);
+    if (fd < 0)
+    {
+        std::cerr << "Unable to open i2c device \n";
+    }
+
+    // set i2c slave address
+    if (ioctl(fd, I2C_SLAVE_FORCE, slaveAddr) < 0)
+    {
+        std::cerr << "Unable to set device address \n";
+        close(fd);
+    }
+
+    // check whether support i2c function
+    unsigned long funcs = 0;
+    if (ioctl(fd, I2C_FUNCS, &funcs) < 0)
+    {
+        std::cerr << "Not support I2C_FUNCS \n";
+        close(fd);
+    }
+
+    // check whether support i2c-read function
+    if (!(funcs & I2C_FUNC_SMBUS_READ_BYTE_DATA))
+    {
+        std::cerr << "Not support I2C_FUNC_SMBUS_READ_BYTE_DATA \n";
+        close(fd);
+    }
+
+    int statusValue_3;
+    statusValue_3 = i2c_smbus_read_byte_data(fd, StatusReg_3);
+    close(fd);
+
+    // return the i2c-read data
+    return statusValue_3;
 }
 
 // Clear CPLD_register after reading.

@@ -71,22 +71,22 @@ namespace Error
 
 namespace sdbusplus
 {
-namespace xyz
+namespace org
 {
-namespace openbmc_project
+namespace open_power
 {
-namespace Common
+namespace Witherspoon
 {
-namespace Callout
+namespace Fault
 {
 namespace Error
 {
-    struct GPIO;
+    struct PsuErrorCode1;
 } // namespace Error
-} // namespace Callout
-} // namespace Common
-} // namespace openbmc_project
-} // namespace xyz
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
 } // namespace sdbusplus
 
 namespace sdbusplus
@@ -481,6 +481,26 @@ namespace Fault
 {
 namespace Error
 {
+    struct PsuErrorCode0;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus
+{
+namespace org
+{
+namespace open_power
+{
+namespace Witherspoon
+{
+namespace Fault
+{
+namespace Error
+{
     struct PowerOnErrorCode30;
 } // namespace Error
 } // namespace Fault
@@ -567,6 +587,26 @@ namespace Error
 } // namespace Witherspoon
 } // namespace open_power
 } // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus
+{
+namespace xyz
+{
+namespace openbmc_project
+{
+namespace Common
+{
+namespace Callout
+{
+namespace Error
+{
+    struct GPIO;
+} // namespace Error
+} // namespace Callout
+} // namespace Common
+} // namespace openbmc_project
+} // namespace xyz
 } // namespace sdbusplus
 
 namespace sdbusplus
@@ -1208,6 +1248,44 @@ template <>
 struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::Error::PowerOnFailure>
 {
     using type = org::open_power::Witherspoon::Fault::PowerOnFailure;
+};
+
+}
+
+namespace org
+{
+namespace open_power
+{
+namespace Witherspoon
+{
+namespace Fault
+{
+namespace _PowerOnErrorCode0
+{
+
+
+}  // namespace _PowerOnErrorCode0
+
+struct PowerOnErrorCode0
+{
+    static constexpr auto L = level::ERR;
+    using metadata_types = std::tuple<>;
+
+};
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+
+namespace details
+{
+
+template <>
+struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::Error::PowerOnErrorCode0>
+{
+    using type = org::open_power::Witherspoon::Fault::PowerOnErrorCode0;
 };
 
 }
@@ -2588,13 +2666,13 @@ namespace Witherspoon
 {
 namespace Fault
 {
-namespace _PowerOnErrorCode0
+namespace _PsuErrorCode0
 {
 
 
-}  // namespace _PowerOnErrorCode0
+}  // namespace _PsuErrorCode0
 
-struct PowerOnErrorCode0
+struct PsuErrorCode0
 {
     static constexpr auto L = level::ERR;
     using metadata_types = std::tuple<>;
@@ -2611,9 +2689,47 @@ namespace details
 {
 
 template <>
-struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::Error::PowerOnErrorCode0>
+struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::Error::PsuErrorCode0>
 {
-    using type = org::open_power::Witherspoon::Fault::PowerOnErrorCode0;
+    using type = org::open_power::Witherspoon::Fault::PsuErrorCode0;
+};
+
+}
+
+namespace org
+{
+namespace open_power
+{
+namespace Witherspoon
+{
+namespace Fault
+{
+namespace _PsuErrorCode1
+{
+
+
+}  // namespace _PsuErrorCode1
+
+struct PsuErrorCode1
+{
+    static constexpr auto L = level::ERR;
+    using metadata_types = std::tuple<>;
+
+};
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+
+namespace details
+{
+
+template <>
+struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::Error::PsuErrorCode1>
+{
+    using type = org::open_power::Witherspoon::Fault::PsuErrorCode1;
 };
 
 }

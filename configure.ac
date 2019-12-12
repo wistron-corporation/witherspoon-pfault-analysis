@@ -118,6 +118,12 @@ AC_DEFINE_UNQUOTED([INPUT_HISTORY_SENSOR_ROOT],
                    ["$INPUT_HISTORY_SENSOR_ROOT"],
                    [The D-Bus power sensors namespace root])
 
+AC_ARG_VAR(MIHAWK_PSU_NOT_ACCESS, [Turn on MIHAWK_PSU_NOT_ACCESS])
+AS_IF([test "x$INPUT_HISTORY_BUSNAME_ROOT" == "x"],
+      [MIHAWK_PSU_NOT_ACCESS = "yes"]
+      AC_DEFINE_UNQUOTED([MIHAWK_PSU_NOT_ACCESS], ["$MIHAWK_PSU_NOT_ACCESS"], [Turn on MIHAWK_PSU_NOT_ACCESS])
+)
+
 # Create configured output
 AC_CONFIG_FILES([Makefile power-sequencer/Makefile power-supply/Makefile test/Makefile power-supply/test/Makefile])
 AC_OUTPUT

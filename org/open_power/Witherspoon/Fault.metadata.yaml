@@ -163,6 +163,12 @@
 - name: PowerOnErrorCode0
   level: ERR
 
+- name: PsuErrorCode0
+  level: ERR
+
+- name: PsuErrorCode1
+  level: ERR
+
 - name: PowerSequencerVoltageFault
   level: ERR
   meta:

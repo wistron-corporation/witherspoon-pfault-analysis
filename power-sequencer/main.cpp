@@ -34,7 +34,8 @@ int main(int argc, char** argv)
 
     if ((action != "pgood-monitor") &&
         (action != "mihawk-cpld-pgood-monitor") &&
-        (action != "runtime-monitor"))
+        (action != "runtime-monitor") &&
+        (action != "mihawk-cpld-runtime-monitor"))
     {
         std::cerr << "Invalid action\n";
         args.usage(argv);
@@ -73,11 +74,18 @@ int main(int argc, char** argv)
         monitor = std::make_unique<PGOODMonitor>(std::move(device), bus, event,
                                                  interval);
     }
-    else // runtime-monitor
+
+    if (action == "runtime-monitor") // runtime-monitor
     {
         // Continuously monitor this device both by polling
         // and on 'power lost' signals.
         auto device = std::make_unique<UCD90160>(0, bus);
+        monitor = std::make_unique<RuntimeMonitor>(std::move(device), bus,
+                                                   event, interval);
+    }
+    else if (action == "mihawk-cpld-runtime-monitor")
+    {
+        auto device = std::make_unique<MIHAWKCPLD>(0, bus);
         monitor = std::make_unique<RuntimeMonitor>(std::move(device), bus,
                                                    event, interval);
     }

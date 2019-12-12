@@ -82,14 +82,19 @@ class MIHAWKCPLD : public Device
     bool checkPoweronFault();
 
     /**
-     * The D-Bus bus object
-     */
-    sdbusplus::bus::bus& bus;
-
-    /**
      * Clear CPLD intrupt record after reading CPLD_register.
      */
     void clearCPLDregister();
+
+    /**
+     * Check PSU power status via runtime-monitor after power_on_fault.
+     */
+    int checkPSUDCpgood();
+
+    /**
+     * The D-Bus bus object
+     */
+    sdbusplus::bus::bus& bus;
 
     /**
      * All of powerOnErrorcode are the definition of error-code

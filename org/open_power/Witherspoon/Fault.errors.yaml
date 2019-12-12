@@ -24,6 +24,9 @@
 - name: PowerOnFailure
   description: System power failed to turn on
 
+- name: PowerOnErrorCode0
+  description: Read CPLD-register fail
+  
 - name: PowerOnErrorCode1
   description: Power on error reason is PSU1_PGOOD fail
 
@@ -132,8 +135,11 @@
 - name: PowerOnErrorCode36
   description: Power on error reason is PSU0&PSU1_pgood fail
 
-- name: PowerOnErrorCode0
-  description: Read CPLD-register fail
+- name: PsuErrorCode0
+  description: PSU1 power fail
+
+- name: PsuErrorCode1
+  description: PSU0 power fail
 
 - name: PowerSequencerVoltageFault
   description: The power sequencer chip detected a voltage fault

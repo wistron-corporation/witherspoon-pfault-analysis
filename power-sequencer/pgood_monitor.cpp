@@ -67,9 +67,7 @@ void PGOODMonitor::analyze()
 
     if (pgoodPending())
     {
-#if defined UCD90160_DEVICE_ACCESS || defined MIHAWKCPLD_DEVICE_ACCESS
         device->onFailure();
-#endif
         report<PowerOnFailure>();
     }
 
