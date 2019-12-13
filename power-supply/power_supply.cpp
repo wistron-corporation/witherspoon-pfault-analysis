@@ -676,6 +676,7 @@ void PowerSupply::updateInventory()
         {
         }
 
+#ifdef MIHAWK_PSU_NOT_ACCESS
         try
         {
             ccin = pmbusIntf.readString(CCIN, Type::HwmonDeviceDebug);
@@ -683,6 +684,7 @@ void PowerSupply::updateInventory()
         catch (ReadFailure& e)
         {
         }
+#endif
 
         try
         {
@@ -704,7 +706,9 @@ void PowerSupply::updateInventory()
 
     assetProps.emplace(SN_PROP, sn);
     assetProps.emplace(PN_PROP, pn);
+#ifdef MIHAWK_PSU_NOT_ACCESS
     assetProps.emplace(MODEL_PROP, ccin);
+#endif
     interfaces.emplace(ASSET_IFACE, std::move(assetProps));
 
     versionProps.emplace(VERSION_PROP, version);
