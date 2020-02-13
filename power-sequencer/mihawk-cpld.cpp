@@ -190,36 +190,37 @@ void MIHAWKCPLD::analyze()
 {
     bool powerreadyError = checkPowerreadyFault();
     
-    //Use the function of GPIO class to check
-    //GPIOF0(CPLD uses).
+    // Use the function of GPIO class to check
+    // GPIOF0(CPLD uses).
     using namespace witherspoon::gpio;
     GPIO gpio{"/dev/gpiochip0", static_cast<gpioNum_t>(40),
               Direction::input};
 
-    //Check GPIOFO pin whther is switched off.
-    //if GPIOF0 has been switched off, 
-    //check CPLD's errorcode & report error.
+    // Check GPIOFO pin whether is switched off.
+    // if GPIOF0 has been switched off, 
+    // check CPLD's errorcode & report error.
     if (gpio.read() == Value::low )
     {
-        //Check CPLD's powerready_errorcode register
-        //whther is updated.
+        // If the interrupt of power_ready_error is switch on,
+        // read CPLD_register error code to analyze and 
+        // report the error event.
         if (powerreadyError)
         {
             int errorcode;
             errorcode = readFromCPLDErrorCode(StatusReg_3);
 
-            //If CPLD's error is detected to 0,
-            //report the error of reading CPLD register
-            //fail.
+            // If CPLD's error is detected to 0,
+            // report the error of reading CPLD register
+            // fail.
             if (errorcode == ErrorCode_0)
             {
                 report<ErrorCode0>();
             }
             else if (errorcodeMask != errorcode)
             {
-                //Check the errorcodeMask & errorcode whether
-                //are the same value to avoid to report the 
-                //same error again.
+                // Check the errorcodeMask & errorcode whether
+                // are the same value to avoid to report the 
+                // same error again.
                 switch (errorcode)
                 {
                     case ErrorCode_1:
@@ -376,9 +377,9 @@ void MIHAWKCPLD::analyze()
 
     if (gpio.read() == Value::high)
     {
-            //If there isn't an error(GPIOF0
-            //which CPLD uses is switched on),
-            //we clear errorcodeMask.
+            // If there isn't an error(GPIOF0
+            // which CPLD uses is switched on),
+            // we clear errorcodeMask.
             errorcodeMask = 0;
     }
 }

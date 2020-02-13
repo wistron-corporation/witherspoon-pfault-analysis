@@ -93,6 +93,8 @@ class MIHAWKCPLD : public Device
      * Check for PowerreadyFault on Mihawk's
      * CPLD-power_ready-error-interrupt-bit-register
      * whether is transfered to "1".
+     *
+     * @return bool - true if power_ready fail.
      */
     bool checkPowerreadyFault();
 
