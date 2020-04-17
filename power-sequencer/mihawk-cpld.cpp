@@ -2,6 +2,7 @@
 
 #include "mihawk-cpld.hpp"
 
+#include "gpio.hpp"
 #include "utility.hpp"
 
 #include <errno.h>
@@ -36,8 +37,8 @@ const static constexpr size_t StatusReg_1 = 0x20;
 // SMLink Status Register(Power-on error code Register)
 const static constexpr size_t StatusReg_2 = 0x21;
 
-// SMLink Status Register(PSU register code Register)
-const static constexpr size_t StatusReg_3 = 0x05;
+// SMLink Status Register(Power-ready error code Register)
+const static constexpr size_t StatusReg_3 = 0x22;
 
 using namespace std;
 namespace witherspoon
@@ -61,159 +62,130 @@ void MIHAWKCPLD::onFailure()
     bool poweronError = checkPoweronFault();
 
     // If the interrupt of power_on_error is switch on,
-    // read CPLD_register error code to analyze and report the error event.
+    // read CPLD_register error code to analyze
+    // and report the error log event.
     if (poweronError)
     {
-        std::cerr << "CPLD : Power_ON error! \n";
-        int errorcode;
-        errorcode = readFromCPLDPSUErrorCode(busId, slaveAddr);
-        if (errorcode == powerOnErrorCode_0)
+        ErrorCode code;
+        code = static_cast<ErrorCode>(readFromCPLDErrorCode(StatusReg_2));
+
+        switch (code)
         {
-            report<PowerOnErrorCode0>();
-        }
-        else if (errorcode == powerOnErrorCode_1)
-        {
-            report<PowerOnErrorCode1>();
-        }
-        else if (errorcode == powerOnErrorCode_2)
-        {
-            report<PowerOnErrorCode2>();
-        }
-        else if (errorcode == powerOnErrorCode_3)
-        {
-            report<PowerOnErrorCode3>();
-        }
-        else if (errorcode == powerOnErrorCode_4)
-        {
-            report<PowerOnErrorCode4>();
-        }
-        else if (errorcode == powerOnErrorCode_5)
-        {
-            report<PowerOnErrorCode5>();
-        }
-        else if (errorcode == powerOnErrorCode_6)
-        {
-            report<PowerOnErrorCode6>();
-        }
-        else if (errorcode == powerOnErrorCode_7)
-        {
-            report<PowerOnErrorCode7>();
-        }
-        else if (errorcode == powerOnErrorCode_8)
-        {
-            report<PowerOnErrorCode8>();
-        }
-        else if (errorcode == powerOnErrorCode_9)
-        {
-            report<PowerOnErrorCode9>();
-        }
-        else if (errorcode == powerOnErrorCode_10)
-        {
-            report<PowerOnErrorCode10>();
-        }
-        else if (errorcode == powerOnErrorCode_11)
-        {
-            report<PowerOnErrorCode11>();
-        }
-        else if (errorcode == powerOnErrorCode_12)
-        {
-            report<PowerOnErrorCode12>();
-        }
-        else if (errorcode == powerOnErrorCode_13)
-        {
-            report<PowerOnErrorCode13>();
-        }
-        else if (errorcode == powerOnErrorCode_14)
-        {
-            report<PowerOnErrorCode14>();
-        }
-        else if (errorcode == powerOnErrorCode_15)
-        {
-            report<PowerOnErrorCode15>();
-        }
-        else if (errorcode == powerOnErrorCode_16)
-        {
-            report<PowerOnErrorCode16>();
-        }
-        else if (errorcode == powerOnErrorCode_17)
-        {
-            report<PowerOnErrorCode17>();
-        }
-        else if (errorcode == powerOnErrorCode_18)
-        {
-            report<PowerOnErrorCode18>();
-        }
-        else if (errorcode == powerOnErrorCode_19)
-        {
-            report<PowerOnErrorCode19>();
-        }
-        else if (errorcode == powerOnErrorCode_20)
-        {
-            report<PowerOnErrorCode20>();
-        }
-        else if (errorcode == powerOnErrorCode_21)
-        {
-            report<PowerOnErrorCode21>();
-        }
-        else if (errorcode == powerOnErrorCode_22)
-        {
-            report<PowerOnErrorCode22>();
-        }
-        else if (errorcode == powerOnErrorCode_23)
-        {
-            report<PowerOnErrorCode23>();
-        }
-        else if (errorcode == powerOnErrorCode_24)
-        {
-            report<PowerOnErrorCode24>();
-        }
-        else if (errorcode == powerOnErrorCode_25)
-        {
-            report<PowerOnErrorCode25>();
-        }
-        else if (errorcode == powerOnErrorCode_26)
-        {
-            report<PowerOnErrorCode26>();
-        }
-        else if (errorcode == powerOnErrorCode_27)
-        {
-            report<PowerOnErrorCode27>();
-        }
-        else if (errorcode == powerOnErrorCode_28)
-        {
-            report<PowerOnErrorCode28>();
-        }
-        else if (errorcode == powerOnErrorCode_29)
-        {
-            report<PowerOnErrorCode29>();
-        }
-        else if (errorcode == powerOnErrorCode_30)
-        {
-            report<PowerOnErrorCode30>();
-        }
-        else if (errorcode == powerOnErrorCode_31)
-        {
-            report<PowerOnErrorCode31>();
-        }
-        else if (errorcode == powerOnErrorCode_32)
-        {
-            report<PowerOnErrorCode32>();
-        }
-        else if (errorcode == powerOnErrorCode_33)
-        {
-            report<PowerOnErrorCode33>();
-        }
-        else if (errorcode == powerOnErrorCode_34)
-        {
-            report<PowerOnErrorCode34>();
-        }
-        else if (errorcode == powerOnErrorCode_35)
-        {
-            report<PowerOnErrorCode35>();
-        }
-        else if (errorcode == powerOnErrorCode_36)
-        {
-            report<PowerOnErrorCode36>();
+            case ErrorCode::_1:
+                report<ErrorCode1>();
+                break;
+            case ErrorCode::_2:
+                report<ErrorCode2>();
+                break;
+            case ErrorCode::_3:
+                report<ErrorCode3>();
+                break;
+            case ErrorCode::_4:
+                report<ErrorCode4>();
+                break;
+            case ErrorCode::_5:
+                report<ErrorCode5>();
+                break;
+            case ErrorCode::_6:
+                report<ErrorCode6>();
+                break;
+            case ErrorCode::_7:
+                report<ErrorCode7>();
+                break;
+            case ErrorCode::_8:
+                report<ErrorCode8>();
+                break;
+            case ErrorCode::_9:
+                report<ErrorCode9>();
+                break;
+            case ErrorCode::_10:
+                report<ErrorCode10>();
+                break;
+            case ErrorCode::_11:
+                report<ErrorCode11>();
+                break;
+            case ErrorCode::_12:
+                report<ErrorCode12>();
+                break;
+            case ErrorCode::_13:
+                report<ErrorCode13>();
+                break;
+            case ErrorCode::_14:
+                report<ErrorCode14>();
+                break;
+            case ErrorCode::_15:
+                report<ErrorCode15>();
+                break;
+            case ErrorCode::_16:
+                report<ErrorCode16>();
+                break;
+            case ErrorCode::_17:
+                report<ErrorCode17>();
+                break;
+            case ErrorCode::_18:
+                report<ErrorCode18>();
+                break;
+            case ErrorCode::_19:
+                report<ErrorCode19>();
+                break;
+            case ErrorCode::_20:
+                report<ErrorCode20>();
+                break;
+            case ErrorCode::_21:
+                report<ErrorCode21>();
+                break;
+            case ErrorCode::_22:
+                report<ErrorCode22>();
+                break;
+            case ErrorCode::_23:
+                report<ErrorCode23>();
+                break;
+            case ErrorCode::_24:
+                report<ErrorCode24>();
+                break;
+            case ErrorCode::_25:
+                report<ErrorCode25>();
+                break;
+            case ErrorCode::_26:
+                report<ErrorCode26>();
+                break;
+            case ErrorCode::_27:
+                report<ErrorCode27>();
+                break;
+            case ErrorCode::_28:
+                report<ErrorCode28>();
+                break;
+            case ErrorCode::_29:
+                report<ErrorCode29>();
+                break;
+            case ErrorCode::_30:
+                report<ErrorCode30>();
+                break;
+            case ErrorCode::_31:
+                report<ErrorCode31>();
+                break;
+            case ErrorCode::_32:
+                report<ErrorCode32>();
+                break;
+            case ErrorCode::_33:
+                report<ErrorCode33>();
+                break;
+            case ErrorCode::_34:
+                report<ErrorCode34>();
+                break;
+            case ErrorCode::_35:
+                report<ErrorCode35>();
+                break;
+            case ErrorCode::_36:
+                report<ErrorCode36>();
+                break;
+            default:
+                // If the errorcode isn't 1~36,
+                // it indicates that the CPLD register
+                // has a reading issue,
+                // so the errorcode0 error is reported.
+                report<ErrorCode0>();
+                break;
         }
         clearCPLDregister();
     }
@@ -221,20 +193,197 @@ void MIHAWKCPLD::onFailure()
 
 void MIHAWKCPLD::analyze()
 {
-    //analyze psu status when power_on fault.
-    auto poweronError = checkPoweronFault();
-    if(poweronError)
+    bool powerreadyError = checkPowerreadyFault();
+
+    // Use the function of GPIO class to check
+    // GPIOF0(CPLD uses).
+    using namespace witherspoon::gpio;
+    GPIO gpio{"/dev/gpiochip0", static_cast<gpioNum_t>(40), Direction::input};
+
+    // Check GPIOFO pin whether is switched off.
+    // if GPIOF0 has been switched off,
+    // check CPLD's errorcode & report error.
+    if (gpio.read() == Value::low)
     {
-        int errorcode;
-        errorcode = checkPSUDCpgood();
-        if (!((errorcode >> 1) & 1) && !((errorcode >> 3) & 1) )
+        // If the interrupt of power_ready_error is switch on,
+        // read CPLD_register error code to analyze and
+        // report the error event.
+        if (powerreadyError)
         {
-            report<PsuErrorCode0>();
+            ErrorCode code;
+            code = static_cast<ErrorCode>(readFromCPLDErrorCode(StatusReg_3));
+
+            if (!errorcodeMask)
+            {
+                // Check the errorcodeMask & errorcode whether
+                // are the same value to avoid to report the
+                // same error again.
+                switch (code)
+                {
+                    case ErrorCode::_1:
+                        report<ErrorCode1>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_2:
+                        report<ErrorCode2>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_3:
+                        report<ErrorCode3>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_4:
+                        report<ErrorCode4>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_5:
+                        report<ErrorCode5>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_6:
+                        report<ErrorCode6>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_7:
+                        report<ErrorCode7>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_8:
+                        report<ErrorCode8>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_9:
+                        report<ErrorCode9>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_10:
+                        report<ErrorCode10>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_11:
+                        report<ErrorCode11>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_12:
+                        report<ErrorCode12>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_13:
+                        report<ErrorCode13>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_14:
+                        report<ErrorCode14>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_15:
+                        report<ErrorCode15>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_16:
+                        report<ErrorCode16>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_17:
+                        report<ErrorCode17>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_18:
+                        report<ErrorCode18>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_19:
+                        report<ErrorCode19>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_20:
+                        report<ErrorCode20>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_21:
+                        report<ErrorCode21>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_22:
+                        report<ErrorCode22>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_23:
+                        report<ErrorCode23>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_24:
+                        report<ErrorCode24>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_25:
+                        report<ErrorCode25>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_26:
+                        report<ErrorCode26>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_27:
+                        report<ErrorCode27>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_28:
+                        report<ErrorCode28>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_29:
+                        report<ErrorCode29>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_30:
+                        report<ErrorCode30>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_31:
+                        report<ErrorCode31>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_32:
+                        report<ErrorCode32>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_33:
+                        report<ErrorCode33>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_34:
+                        report<ErrorCode34>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_35:
+                        report<ErrorCode35>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_36:
+                        report<ErrorCode36>();
+                        errorcodeMask = 1;
+                        break;
+                    default:
+                        // If the errorcode is not 1~36,
+                        // it indicates that the CPLD register
+                        // has a reading issue, so the
+                        // errorcode0 error is reported.
+                        report<ErrorCode0>();
+                        errorcodeMask = 1;
+                        break;
+                }
+                clearCPLDregister();
+            }
         }
-        else if (!((errorcode >> 2) & 1) && !((errorcode >> 4) & 1))
-        {
-            report<PsuErrorCode1>();
-        }
+    }
+
+    if (gpio.read() == Value::high)
+    {
+        // If there isn't an error(GPIOF0
+        // which CPLD uses is switched on),
+        // we clear errorcodeMask.
+        errorcodeMask = 0;
     }
 }
 
@@ -274,7 +423,7 @@ bool MIHAWKCPLD::checkPoweronFault()
     }
 
     int statusValue_1;
-    
+
     statusValue_1 = i2c_smbus_read_byte_data(fd, StatusReg_1);
     close(fd);
 
@@ -299,9 +448,9 @@ bool MIHAWKCPLD::checkPoweronFault()
 }
 
 // Read CPLD_register error code and return the result to analyze.
-int MIHAWKCPLD::readFromCPLDPSUErrorCode(int bus, int Addr)
+int MIHAWKCPLD::readFromCPLDErrorCode(int statusReg)
 {
-    std::string i2cBus = "/dev/i2c-" + std::to_string(bus);
+    std::string i2cBus = "/dev/i2c-" + std::to_string(busId);
 
     // open i2c device(CPLD-PSU-register table)
     int fd = open(i2cBus.c_str(), O_RDWR | O_CLOEXEC);
@@ -311,7 +460,7 @@ int MIHAWKCPLD::readFromCPLDPSUErrorCode(int bus, int Addr)
     }
 
     // set i2c slave address
-    if (ioctl(fd, I2C_SLAVE_FORCE, Addr) < 0)
+    if (ioctl(fd, I2C_SLAVE_FORCE, slaveAddr) < 0)
     {
         std::cerr << "Unable to set device address \n";
         close(fd);
@@ -333,7 +482,7 @@ int MIHAWKCPLD::readFromCPLDPSUErrorCode(int bus, int Addr)
     }
 
     int statusValue_2;
-    statusValue_2 = i2c_smbus_read_byte_data(fd, StatusReg_2);
+    statusValue_2 = i2c_smbus_read_byte_data(fd, statusReg);
     close(fd);
 
     if (statusValue_2 < 0)
@@ -346,8 +495,9 @@ int MIHAWKCPLD::readFromCPLDPSUErrorCode(int bus, int Addr)
 }
 
 // Check PSU_DC_PGOOD state form PSU register via CPLD
-int MIHAWKCPLD::checkPSUDCpgood()
+bool MIHAWKCPLD::checkPowerreadyFault()
 {
+    bool result;
     std::string i2cBus = "/dev/i2c-" + std::to_string(busId);
 
     // open i2c device(CPLD-PSU-register table)
@@ -380,11 +530,28 @@ int MIHAWKCPLD::checkPSUDCpgood()
     }
 
     int statusValue_3;
-    statusValue_3 = i2c_smbus_read_byte_data(fd, StatusReg_3);
+    statusValue_3 = i2c_smbus_read_byte_data(fd, StatusReg_1);
     close(fd);
 
+    if (statusValue_3 < 0)
+    {
+        std::cerr << "i2c_smbus_read_byte_data failed \n";
+        result = 0;
+    }
+
+    if ((statusValue_3 >> 6) & 1)
+    {
+        // If power_ready-interrupt-bit is read as 1,
+        // switch on the flag.
+        result = 1;
+    }
+    else
+    {
+        result = 0;
+    }
+
     // return the i2c-read data
-    return statusValue_3;
+    return result;
 }
 
 // Clear CPLD_register after reading.
