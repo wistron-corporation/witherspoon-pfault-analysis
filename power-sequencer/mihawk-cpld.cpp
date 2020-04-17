@@ -197,7 +197,7 @@ void MIHAWKCPLD::analyze()
 
     // Use the function of GPIO class to check
     // GPIOF0(CPLD uses).
-    using namespace phosphor::gpio;
+    using namespace witherspoon::gpio;
     GPIO gpio{"/dev/gpiochip0", static_cast<gpioNum_t>(40), Direction::input};
 
     // Check GPIOFO pin whether is switched off.
