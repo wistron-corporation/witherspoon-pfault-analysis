@@ -2,8 +2,9 @@
 
 #include "mihawk-cpld.hpp"
 
-#include "utility.hpp"
 #include "gpio.hpp"
+#include "utility.hpp"
+
 #include <errno.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
@@ -61,125 +62,129 @@ void MIHAWKCPLD::onFailure()
     bool poweronError = checkPoweronFault();
 
     // If the interrupt of power_on_error is switch on,
-    // read CPLD_register error code to analyze and report the error event.
+    // read CPLD_register error code to analyze
+    // and report the error log event.
     if (poweronError)
     {
-        int errorcode;
-        errorcode = readFromCPLDErrorCode(StatusReg_2);
-        switch (errorcode)
+        ErrorCode code;
+        code = static_cast<ErrorCode>(readFromCPLDErrorCode(StatusReg_2));
+
+        switch (code)
         {
-            case ErrorCode_0:
-                report<ErrorCode0>();
-                break;
-            case ErrorCode_1:
+            case ErrorCode::_1:
                 report<ErrorCode1>();
                 break;
-            case ErrorCode_2:
+            case ErrorCode::_2:
                 report<ErrorCode2>();
                 break;
-            case ErrorCode_3:
+            case ErrorCode::_3:
                 report<ErrorCode3>();
                 break;
-            case ErrorCode_4:
+            case ErrorCode::_4:
                 report<ErrorCode4>();
                 break;
-            case ErrorCode_5:
+            case ErrorCode::_5:
                 report<ErrorCode5>();
                 break;
-            case ErrorCode_6:
+            case ErrorCode::_6:
                 report<ErrorCode6>();
                 break;
-            case ErrorCode_7:
+            case ErrorCode::_7:
                 report<ErrorCode7>();
                 break;
-            case ErrorCode_8:
+            case ErrorCode::_8:
                 report<ErrorCode8>();
                 break;
-            case ErrorCode_9:
+            case ErrorCode::_9:
                 report<ErrorCode9>();
                 break;
-            case ErrorCode_10:
+            case ErrorCode::_10:
                 report<ErrorCode10>();
                 break;
-            case ErrorCode_11:
+            case ErrorCode::_11:
                 report<ErrorCode11>();
                 break;
-            case ErrorCode_12:
+            case ErrorCode::_12:
                 report<ErrorCode12>();
                 break;
-            case ErrorCode_13:
+            case ErrorCode::_13:
                 report<ErrorCode13>();
                 break;
-            case ErrorCode_14:
+            case ErrorCode::_14:
                 report<ErrorCode14>();
                 break;
-            case ErrorCode_15:
+            case ErrorCode::_15:
                 report<ErrorCode15>();
                 break;
-            case ErrorCode_16:
+            case ErrorCode::_16:
                 report<ErrorCode16>();
                 break;
-            case ErrorCode_17:
+            case ErrorCode::_17:
                 report<ErrorCode17>();
                 break;
-            case ErrorCode_18:
+            case ErrorCode::_18:
                 report<ErrorCode18>();
                 break;
-            case ErrorCode_19:
+            case ErrorCode::_19:
                 report<ErrorCode19>();
                 break;
-            case ErrorCode_20:
+            case ErrorCode::_20:
                 report<ErrorCode20>();
                 break;
-            case ErrorCode_21:
+            case ErrorCode::_21:
                 report<ErrorCode21>();
                 break;
-            case ErrorCode_22:
+            case ErrorCode::_22:
                 report<ErrorCode22>();
                 break;
-            case ErrorCode_23:
+            case ErrorCode::_23:
                 report<ErrorCode23>();
                 break;
-            case ErrorCode_24:
+            case ErrorCode::_24:
                 report<ErrorCode24>();
                 break;
-            case ErrorCode_25:
+            case ErrorCode::_25:
                 report<ErrorCode25>();
                 break;
-            case ErrorCode_26:
+            case ErrorCode::_26:
                 report<ErrorCode26>();
                 break;
-            case ErrorCode_27:
+            case ErrorCode::_27:
                 report<ErrorCode27>();
                 break;
-            case ErrorCode_28:
+            case ErrorCode::_28:
                 report<ErrorCode28>();
                 break;
-            case ErrorCode_29:
+            case ErrorCode::_29:
                 report<ErrorCode29>();
                 break;
-            case ErrorCode_30:
+            case ErrorCode::_30:
                 report<ErrorCode30>();
                 break;
-            case ErrorCode_31:
+            case ErrorCode::_31:
                 report<ErrorCode31>();
                 break;
-            case ErrorCode_32:
+            case ErrorCode::_32:
                 report<ErrorCode32>();
                 break;
-            case ErrorCode_33:
+            case ErrorCode::_33:
                 report<ErrorCode33>();
                 break;
-            case ErrorCode_34:
+            case ErrorCode::_34:
                 report<ErrorCode34>();
                 break;
-            case ErrorCode_35:
+            case ErrorCode::_35:
                 report<ErrorCode35>();
                 break;
-            case ErrorCode_36:
+            case ErrorCode::_36:
                 report<ErrorCode36>();
                 break;
             default:
+                // If the errorcode isn't 1~36,
+                // it indicates that the CPLD register
+                // has a reading issue,
+                // so the errorcode0 error is reported.
+                report<ErrorCode0>();
                 break;
         }
         clearCPLDregister();
@@ -189,198 +194,196 @@ void MIHAWKCPLD::onFailure()
 void MIHAWKCPLD::analyze()
 {
     bool powerreadyError = checkPowerreadyFault();
-    
+
     // Use the function of GPIO class to check
     // GPIOF0(CPLD uses).
-    using namespace witherspoon::gpio;
-    GPIO gpio{"/dev/gpiochip0", static_cast<gpioNum_t>(40),
-              Direction::input};
+    using namespace phosphor::gpio;
+    GPIO gpio{"/dev/gpiochip0", static_cast<gpioNum_t>(40), Direction::input};
 
     // Check GPIOFO pin whether is switched off.
-    // if GPIOF0 has been switched off, 
+    // if GPIOF0 has been switched off,
     // check CPLD's errorcode & report error.
-    if (gpio.read() == Value::low )
+    if (gpio.read() == Value::low)
     {
         // If the interrupt of power_ready_error is switch on,
-        // read CPLD_register error code to analyze and 
+        // read CPLD_register error code to analyze and
         // report the error event.
         if (powerreadyError)
         {
-            int errorcode;
-            errorcode = readFromCPLDErrorCode(StatusReg_3);
+            ErrorCode code;
+            code = static_cast<ErrorCode>(readFromCPLDErrorCode(StatusReg_3));
 
-            // If CPLD's error is detected to 0,
-            // report the error of reading CPLD register
-            // fail.
-            if (errorcode == ErrorCode_0)
-            {
-                report<ErrorCode0>();
-            }
-            else if (errorcodeMask != errorcode)
+            if (!errorcodeMask)
             {
                 // Check the errorcodeMask & errorcode whether
-                // are the same value to avoid to report the 
+                // are the same value to avoid to report the
                 // same error again.
-                switch (errorcode)
+                switch (code)
                 {
-                    case ErrorCode_1:
+                    case ErrorCode::_1:
                         report<ErrorCode1>();
-                        errorcodeMask = ErrorCode_1;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_2:
+                    case ErrorCode::_2:
                         report<ErrorCode2>();
-                        errorcodeMask = ErrorCode_2;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_3:
+                    case ErrorCode::_3:
                         report<ErrorCode3>();
-                        errorcodeMask = ErrorCode_3;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_4:
+                    case ErrorCode::_4:
                         report<ErrorCode4>();
-                        errorcodeMask = ErrorCode_4;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_5:
+                    case ErrorCode::_5:
                         report<ErrorCode5>();
-                        errorcodeMask = ErrorCode_5;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_6:
+                    case ErrorCode::_6:
                         report<ErrorCode6>();
-                        errorcodeMask = ErrorCode_6;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_7:
+                    case ErrorCode::_7:
                         report<ErrorCode7>();
-                        errorcodeMask = ErrorCode_7;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_8:
+                    case ErrorCode::_8:
                         report<ErrorCode8>();
-                        errorcodeMask = ErrorCode_8;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_9:
+                    case ErrorCode::_9:
                         report<ErrorCode9>();
-                        errorcodeMask = ErrorCode_9;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_10:
+                    case ErrorCode::_10:
                         report<ErrorCode10>();
-                        errorcodeMask = ErrorCode_10;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_11:
+                    case ErrorCode::_11:
                         report<ErrorCode11>();
-                        errorcodeMask = ErrorCode_11;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_12:
+                    case ErrorCode::_12:
                         report<ErrorCode12>();
-                        errorcodeMask = ErrorCode_12;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_13:
+                    case ErrorCode::_13:
                         report<ErrorCode13>();
-                        errorcodeMask = ErrorCode_13;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_14:
+                    case ErrorCode::_14:
                         report<ErrorCode14>();
-                        errorcodeMask = ErrorCode_14;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_15:
+                    case ErrorCode::_15:
                         report<ErrorCode15>();
-                        errorcodeMask = ErrorCode_15;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_16:
+                    case ErrorCode::_16:
                         report<ErrorCode16>();
-                        errorcodeMask = ErrorCode_16;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_17:
+                    case ErrorCode::_17:
                         report<ErrorCode17>();
-                        errorcodeMask = ErrorCode_17;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_18:
+                    case ErrorCode::_18:
                         report<ErrorCode18>();
-                        errorcodeMask = ErrorCode_18;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_19:
+                    case ErrorCode::_19:
                         report<ErrorCode19>();
-                        errorcodeMask = ErrorCode_19;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_20:
+                    case ErrorCode::_20:
                         report<ErrorCode20>();
-                        errorcodeMask = ErrorCode_20;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_21:
+                    case ErrorCode::_21:
                         report<ErrorCode21>();
-                        errorcodeMask = ErrorCode_21;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_22:
+                    case ErrorCode::_22:
                         report<ErrorCode22>();
-                        errorcodeMask = ErrorCode_22;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_23:
+                    case ErrorCode::_23:
                         report<ErrorCode23>();
-                        errorcodeMask = ErrorCode_23;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_24:
+                    case ErrorCode::_24:
                         report<ErrorCode24>();
-                        errorcodeMask = ErrorCode_24;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_25:
+                    case ErrorCode::_25:
                         report<ErrorCode25>();
-                        errorcodeMask = ErrorCode_25;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_26:
+                    case ErrorCode::_26:
                         report<ErrorCode26>();
-                        errorcodeMask = ErrorCode_26;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_27:
+                    case ErrorCode::_27:
                         report<ErrorCode27>();
-                        errorcodeMask = ErrorCode_27;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_28:
+                    case ErrorCode::_28:
                         report<ErrorCode28>();
-                        errorcodeMask = ErrorCode_28;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_29:
+                    case ErrorCode::_29:
                         report<ErrorCode29>();
-                        errorcodeMask = ErrorCode_29;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_30:
+                    case ErrorCode::_30:
                         report<ErrorCode30>();
-                        errorcodeMask = ErrorCode_30;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_31:
+                    case ErrorCode::_31:
                         report<ErrorCode31>();
-                        errorcodeMask = ErrorCode_31;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_32:
+                    case ErrorCode::_32:
                         report<ErrorCode32>();
-                        errorcodeMask = ErrorCode_32;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_33:
+                    case ErrorCode::_33:
                         report<ErrorCode33>();
-                        errorcodeMask = ErrorCode_33;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_34:
+                    case ErrorCode::_34:
                         report<ErrorCode34>();
-                        errorcodeMask = ErrorCode_34;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_35:
+                    case ErrorCode::_35:
                         report<ErrorCode35>();
-                        errorcodeMask = ErrorCode_35;
+                        errorcodeMask = 1;
                         break;
-                    case ErrorCode_36:
+                    case ErrorCode::_36:
                         report<ErrorCode36>();
-                        errorcodeMask = ErrorCode_36;
+                        errorcodeMask = 1;
                         break;
                     default:
+                        // If the errorcode is not 1~36,
+                        // it indicates that the CPLD register
+                        // has a reading issue, so the
+                        // errorcode0 error is reported.
+                        report<ErrorCode0>();
+                        errorcodeMask = 1;
                         break;
                 }
-            clearCPLDregister();
+                clearCPLDregister();
             }
         }
     }
 
     if (gpio.read() == Value::high)
     {
-            // If there isn't an error(GPIOF0
-            // which CPLD uses is switched on),
-            // we clear errorcodeMask.
-            errorcodeMask = 0;
+        // If there isn't an error(GPIOF0
+        // which CPLD uses is switched on),
+        // we clear errorcodeMask.
+        errorcodeMask = 0;
     }
 }
 
@@ -420,7 +423,7 @@ bool MIHAWKCPLD::checkPoweronFault()
     }
 
     int statusValue_1;
-    
+
     statusValue_1 = i2c_smbus_read_byte_data(fd, StatusReg_1);
     close(fd);
 
