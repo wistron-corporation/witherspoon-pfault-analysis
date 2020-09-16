@@ -27,8 +27,12 @@ extern "C" {
 #include <linux/i2c.h>
 }
 
-// i2c bus & i2c slave address of Mihawk's CPLD
+// i2c bus & i2c slave address of Mihawk/Mowgli's CPLD
+#ifdef MOWGLICPLD_DEVICE_ACCESS
+#define busId 3
+#else
 #define busId 11
+#endif
 #define slaveAddr 0x40
 
 // SMLink Status Register(Interrupt-control-bit Register)
