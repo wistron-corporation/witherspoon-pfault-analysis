@@ -335,7 +335,61 @@ class MIHAWKCPLD : public Device
          * The definition of error-code:
          * PSU0PSU1_PGOOD fail.
          */
-        _36 = 170
+        _36 = 170,
+
+        /**
+         * The definition of error-code:
+         * P1V35_PGOOD fail.
+         */
+        _37 = 36,
+
+        /**
+         * The definition of error-code:
+         * P1V2_PGOOD fail.
+         */
+        _38 = 37,
+
+        /**
+         * The definition of error-code:
+         * P0V92_PGOOD fail.
+         */
+        _39 = 38,
+
+        /**
+         * The definition of error-code:
+         * P5V0VCSA_PGOOD fail.
+         */
+        _40 = 65,
+
+        /**
+         * The definition of error-code:
+         * P1V1VCSA_PGOOD fail.
+         */
+        _41 = 66,
+
+        /**
+         * The definition of error-code:
+         * P3V3VCSA_PGOOD fail.
+         */
+        _42 = 67,
+
+        /**
+         * The definition of error-code:
+         * P2V5VCSA_PGOOD fail.
+         */
+        _43 = 68,
+
+        /**
+         * The definition of error-code:
+         * P1V2VCSA_PGOOD fail.
+         */
+        _44 = 69,
+
+        /**
+         * The definition of error-code:
+         * P1V15VCSA_PGOOD fail.
+         */
+        _45 = 70
     };
 };
 

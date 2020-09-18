@@ -163,6 +163,33 @@
 - name: ErrorCode36
   level: ERR
 
+- name: ErrorCode37
+  level: ERR
+
+- name: ErrorCode38
+  level: ERR
+
+- name: ErrorCode39
+  level: ERR
+
+- name: ErrorCode40
+  level: ERR
+
+- name: ErrorCode41
+  level: ERR
+
+- name: ErrorCode42
+  level: ERR
+
+- name: ErrorCode43
+  level: ERR
+
+- name: ErrorCode44
+  level: ERR
+
+- name: ErrorCode45
+  level: ERR
+
 - name: PowerSequencerVoltageFault
   level: ERR
   meta:

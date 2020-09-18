@@ -9,18 +9,12 @@
 #include <tuple>
 #include <type_traits>
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct MemoryPowerFault;
 } // namespace Error
 } // namespace Fault
@@ -29,18 +23,12 @@ struct MemoryPowerFault;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct GPUPowerFault;
 } // namespace Error
 } // namespace Fault
@@ -49,18 +37,12 @@ struct GPUPowerFault;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct PowerSequencerPGOODFault;
 } // namespace Error
 } // namespace Fault
@@ -69,18 +51,96 @@ struct PowerSequencerPGOODFault;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode42;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode43;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode40;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode41;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode44;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode45;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct PowerSequencerVoltageFault;
 } // namespace Error
 } // namespace Fault
@@ -89,458 +149,12 @@ struct PowerSequencerVoltageFault;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct GPUOverTemp;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace Error
-{
-struct IPMISensor;
-} // namespace Error
-} // namespace Callout
-} // namespace Common
-} // namespace openbmc_project
-} // namespace xyz
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct PowerOnFailure;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct Shutdown;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct PowerSupplyInputFault;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace Error
-{
-struct Device;
-} // namespace Error
-} // namespace Callout
-} // namespace Common
-} // namespace openbmc_project
-} // namespace xyz
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode15;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode14;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode17;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode16;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode11;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode10;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode13;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode12;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode36;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode35;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode34;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode19;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode18;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode31;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
-struct ErrorCode30;
-} // namespace Error
-} // namespace Fault
-} // namespace Witherspoon
-} // namespace open_power
-} // namespace org
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace Error
-{
-struct GPIO;
-} // namespace Error
-} // namespace Callout
-} // namespace Common
-} // namespace openbmc_project
-} // namespace xyz
-} // namespace sdbusplus
-
-namespace sdbusplus
-{
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace Error {
 struct IIC;
 } // namespace Error
 } // namespace Callout
@@ -549,18 +163,348 @@ struct IIC;
 } // namespace xyz
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct GPUOverTemp;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace Error {
+struct IPMISensor;
+} // namespace Error
+} // namespace Callout
+} // namespace Common
+} // namespace openbmc_project
+} // namespace xyz
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct PowerOnFailure;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct Shutdown;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct PowerSupplyInputFault;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace Error {
+struct Device;
+} // namespace Error
+} // namespace Callout
+} // namespace Common
+} // namespace openbmc_project
+} // namespace xyz
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode15;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode14;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode17;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode16;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode11;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode10;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode13;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode12;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode37;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode36;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode35;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode34;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode19;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode18;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode31;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode30;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace Error {
+struct GPIO;
+} // namespace Error
+} // namespace Callout
+} // namespace Common
+} // namespace openbmc_project
+} // namespace xyz
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode39;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode32;
 } // namespace Error
 } // namespace Fault
@@ -569,18 +513,26 @@ struct ErrorCode32;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
+struct ErrorCode38;
+} // namespace Error
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct PowerSupplyOutputOvercurrent;
 } // namespace Error
 } // namespace Fault
@@ -589,18 +541,12 @@ struct PowerSupplyOutputOvercurrent;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode33;
 } // namespace Error
 } // namespace Fault
@@ -609,18 +555,12 @@ struct ErrorCode33;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct PowerSupplyTemperatureFault;
 } // namespace Error
 } // namespace Fault
@@ -629,18 +569,12 @@ struct PowerSupplyTemperatureFault;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct PowerSequencerFault;
 } // namespace Error
 } // namespace Fault
@@ -649,18 +583,12 @@ struct PowerSequencerFault;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct PowerSupplyFanFault;
 } // namespace Error
 } // namespace Fault
@@ -669,18 +597,12 @@ struct PowerSupplyFanFault;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct PowerSupplyOutputOvervoltage;
 } // namespace Error
 } // namespace Fault
@@ -689,18 +611,12 @@ struct PowerSupplyOutputOvervoltage;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode9;
 } // namespace Error
 } // namespace Fault
@@ -709,18 +625,12 @@ struct ErrorCode9;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode8;
 } // namespace Error
 } // namespace Fault
@@ -729,18 +639,12 @@ struct ErrorCode8;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace Error {
 struct Inventory;
 } // namespace Error
 } // namespace Callout
@@ -749,18 +653,12 @@ struct Inventory;
 } // namespace xyz
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode5;
 } // namespace Error
 } // namespace Fault
@@ -769,18 +667,12 @@ struct ErrorCode5;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode4;
 } // namespace Error
 } // namespace Fault
@@ -789,18 +681,12 @@ struct ErrorCode4;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode7;
 } // namespace Error
 } // namespace Fault
@@ -809,18 +695,12 @@ struct ErrorCode7;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode6;
 } // namespace Error
 } // namespace Fault
@@ -829,18 +709,12 @@ struct ErrorCode6;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode1;
 } // namespace Error
 } // namespace Fault
@@ -849,18 +723,12 @@ struct ErrorCode1;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode0;
 } // namespace Error
 } // namespace Fault
@@ -869,18 +737,12 @@ struct ErrorCode0;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode3;
 } // namespace Error
 } // namespace Fault
@@ -889,18 +751,12 @@ struct ErrorCode3;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode2;
 } // namespace Error
 } // namespace Fault
@@ -909,18 +765,12 @@ struct ErrorCode2;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode28;
 } // namespace Error
 } // namespace Fault
@@ -929,18 +779,12 @@ struct ErrorCode28;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode29;
 } // namespace Error
 } // namespace Fault
@@ -949,18 +793,12 @@ struct ErrorCode29;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct PowerSupplyShouldBeOn;
 } // namespace Error
 } // namespace Fault
@@ -969,18 +807,12 @@ struct PowerSupplyShouldBeOn;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode20;
 } // namespace Error
 } // namespace Fault
@@ -989,18 +821,12 @@ struct ErrorCode20;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode21;
 } // namespace Error
 } // namespace Fault
@@ -1009,18 +835,12 @@ struct ErrorCode21;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode22;
 } // namespace Error
 } // namespace Fault
@@ -1029,18 +849,12 @@ struct ErrorCode22;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode23;
 } // namespace Error
 } // namespace Fault
@@ -1049,18 +863,12 @@ struct ErrorCode23;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode24;
 } // namespace Error
 } // namespace Fault
@@ -1069,18 +877,12 @@ struct ErrorCode24;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode25;
 } // namespace Error
 } // namespace Fault
@@ -1089,18 +891,12 @@ struct ErrorCode25;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode26;
 } // namespace Error
 } // namespace Fault
@@ -1109,18 +905,12 @@ struct ErrorCode26;
 } // namespace org
 } // namespace sdbusplus
 
-namespace sdbusplus
-{
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace Error
-{
+namespace sdbusplus {
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace Error {
 struct ErrorCode27;
 } // namespace Error
 } // namespace Fault
@@ -1129,29 +919,19 @@ struct ErrorCode27;
 } // namespace org
 } // namespace sdbusplus
 
-namespace phosphor
-{
+namespace phosphor {
 
-namespace logging
-{
+namespace logging {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _Shutdown
-{
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _Shutdown {} // namespace _Shutdown
 
-} // namespace _Shutdown
-
-struct Shutdown
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct Shutdown {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1159,35 +939,24 @@ struct Shutdown
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::Shutdown>
-{
-    using type = org::open_power::Witherspoon::Fault::Shutdown;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::Shutdown> {
+  using type = org::open_power::Witherspoon::Fault::Shutdown;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerOnFailure {} // namespace _PowerOnFailure
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerOnFailure
-{
-
-} // namespace _PowerOnFailure
-
-struct PowerOnFailure
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct PowerOnFailure {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1195,35 +964,24 @@ struct PowerOnFailure
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::PowerOnFailure>
-{
-    using type = org::open_power::Witherspoon::Fault::PowerOnFailure;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::PowerOnFailure> {
+  using type = org::open_power::Witherspoon::Fault::PowerOnFailure;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode0 {} // namespace _ErrorCode0
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode0
-{
-
-} // namespace _ErrorCode0
-
-struct ErrorCode0
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode0 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1231,35 +989,24 @@ struct ErrorCode0
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode0>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode0;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode0> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode0;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode1 {} // namespace _ErrorCode1
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode1
-{
-
-} // namespace _ErrorCode1
-
-struct ErrorCode1
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode1 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1267,35 +1014,24 @@ struct ErrorCode1
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode1>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode1;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode1> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode1;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode2 {} // namespace _ErrorCode2
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode2
-{
-
-} // namespace _ErrorCode2
-
-struct ErrorCode2
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode2 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1303,35 +1039,24 @@ struct ErrorCode2
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode2>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode2;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode2> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode2;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode3 {} // namespace _ErrorCode3
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode3
-{
-
-} // namespace _ErrorCode3
-
-struct ErrorCode3
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode3 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1339,35 +1064,24 @@ struct ErrorCode3
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode3>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode3;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode3> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode3;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode4 {} // namespace _ErrorCode4
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode4
-{
-
-} // namespace _ErrorCode4
-
-struct ErrorCode4
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode4 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1375,35 +1089,24 @@ struct ErrorCode4
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode4>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode4;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode4> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode4;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode5 {} // namespace _ErrorCode5
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode5
-{
-
-} // namespace _ErrorCode5
-
-struct ErrorCode5
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode5 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1411,35 +1114,24 @@ struct ErrorCode5
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode5>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode5;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode5> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode5;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode6 {} // namespace _ErrorCode6
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode6
-{
-
-} // namespace _ErrorCode6
-
-struct ErrorCode6
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode6 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1447,35 +1139,24 @@ struct ErrorCode6
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode6>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode6;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode6> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode6;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode7 {} // namespace _ErrorCode7
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode7
-{
-
-} // namespace _ErrorCode7
-
-struct ErrorCode7
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode7 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1483,35 +1164,24 @@ struct ErrorCode7
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode7>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode7;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode7> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode7;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode8 {} // namespace _ErrorCode8
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode8
-{
-
-} // namespace _ErrorCode8
-
-struct ErrorCode8
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode8 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1519,35 +1189,24 @@ struct ErrorCode8
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode8>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode8;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode8> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode8;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode9 {} // namespace _ErrorCode9
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode9
-{
-
-} // namespace _ErrorCode9
-
-struct ErrorCode9
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode9 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1555,35 +1214,24 @@ struct ErrorCode9
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode9>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode9;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode9> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode9;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode10 {} // namespace _ErrorCode10
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode10
-{
-
-} // namespace _ErrorCode10
-
-struct ErrorCode10
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode10 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1591,35 +1239,24 @@ struct ErrorCode10
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode10>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode10;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode10> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode10;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode11 {} // namespace _ErrorCode11
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode11
-{
-
-} // namespace _ErrorCode11
-
-struct ErrorCode11
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode11 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1627,35 +1264,24 @@ struct ErrorCode11
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode11>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode11;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode11> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode11;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode12 {} // namespace _ErrorCode12
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode12
-{
-
-} // namespace _ErrorCode12
-
-struct ErrorCode12
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode12 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1663,35 +1289,24 @@ struct ErrorCode12
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode12>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode12;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode12> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode12;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode13 {} // namespace _ErrorCode13
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode13
-{
-
-} // namespace _ErrorCode13
-
-struct ErrorCode13
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode13 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1699,35 +1314,24 @@ struct ErrorCode13
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode13>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode13;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode13> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode13;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode14 {} // namespace _ErrorCode14
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode14
-{
-
-} // namespace _ErrorCode14
-
-struct ErrorCode14
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode14 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1735,35 +1339,24 @@ struct ErrorCode14
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode14>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode14;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode14> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode14;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode15 {} // namespace _ErrorCode15
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode15
-{
-
-} // namespace _ErrorCode15
-
-struct ErrorCode15
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode15 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1771,35 +1364,24 @@ struct ErrorCode15
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode15>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode15;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode15> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode15;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode16 {} // namespace _ErrorCode16
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode16
-{
-
-} // namespace _ErrorCode16
-
-struct ErrorCode16
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode16 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1807,35 +1389,24 @@ struct ErrorCode16
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode16>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode16;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode16> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode16;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode17 {} // namespace _ErrorCode17
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode17
-{
-
-} // namespace _ErrorCode17
-
-struct ErrorCode17
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode17 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1843,35 +1414,24 @@ struct ErrorCode17
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode17>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode17;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode17> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode17;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode18 {} // namespace _ErrorCode18
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode18
-{
-
-} // namespace _ErrorCode18
-
-struct ErrorCode18
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode18 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1879,35 +1439,24 @@ struct ErrorCode18
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode18>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode18;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode18> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode18;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode19 {} // namespace _ErrorCode19
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode19
-{
-
-} // namespace _ErrorCode19
-
-struct ErrorCode19
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode19 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1915,35 +1464,24 @@ struct ErrorCode19
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode19>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode19;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode19> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode19;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode20 {} // namespace _ErrorCode20
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode20
-{
-
-} // namespace _ErrorCode20
-
-struct ErrorCode20
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode20 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1951,35 +1489,24 @@ struct ErrorCode20
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode20>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode20;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode20> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode20;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode21 {} // namespace _ErrorCode21
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode21
-{
-
-} // namespace _ErrorCode21
-
-struct ErrorCode21
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode21 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -1987,35 +1514,24 @@ struct ErrorCode21
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode21>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode21;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode21> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode21;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode22 {} // namespace _ErrorCode22
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode22
-{
-
-} // namespace _ErrorCode22
-
-struct ErrorCode22
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode22 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2023,35 +1539,24 @@ struct ErrorCode22
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode22>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode22;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode22> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode22;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode23 {} // namespace _ErrorCode23
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode23
-{
-
-} // namespace _ErrorCode23
-
-struct ErrorCode23
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode23 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2059,35 +1564,24 @@ struct ErrorCode23
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode23>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode23;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode23> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode23;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode24 {} // namespace _ErrorCode24
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode24
-{
-
-} // namespace _ErrorCode24
-
-struct ErrorCode24
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode24 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2095,35 +1589,24 @@ struct ErrorCode24
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode24>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode24;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode24> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode24;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode25 {} // namespace _ErrorCode25
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode25
-{
-
-} // namespace _ErrorCode25
-
-struct ErrorCode25
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode25 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2131,35 +1614,24 @@ struct ErrorCode25
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode25>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode25;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode25> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode25;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode26 {} // namespace _ErrorCode26
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode26
-{
-
-} // namespace _ErrorCode26
-
-struct ErrorCode26
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode26 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2167,35 +1639,24 @@ struct ErrorCode26
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode26>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode26;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode26> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode26;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode27 {} // namespace _ErrorCode27
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode27
-{
-
-} // namespace _ErrorCode27
-
-struct ErrorCode27
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode27 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2203,35 +1664,24 @@ struct ErrorCode27
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode27>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode27;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode27> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode27;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode28 {} // namespace _ErrorCode28
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode28
-{
-
-} // namespace _ErrorCode28
-
-struct ErrorCode28
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode28 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2239,35 +1689,24 @@ struct ErrorCode28
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode28>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode28;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode28> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode28;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode29 {} // namespace _ErrorCode29
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode29
-{
-
-} // namespace _ErrorCode29
-
-struct ErrorCode29
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode29 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2275,35 +1714,24 @@ struct ErrorCode29
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode29>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode29;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode29> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode29;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode30 {} // namespace _ErrorCode30
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode30
-{
-
-} // namespace _ErrorCode30
-
-struct ErrorCode30
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode30 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2311,35 +1739,24 @@ struct ErrorCode30
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode30>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode30;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode30> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode30;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode31 {} // namespace _ErrorCode31
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode31
-{
-
-} // namespace _ErrorCode31
-
-struct ErrorCode31
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode31 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2347,35 +1764,24 @@ struct ErrorCode31
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode31>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode31;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode31> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode31;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode32 {} // namespace _ErrorCode32
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode32
-{
-
-} // namespace _ErrorCode32
-
-struct ErrorCode32
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode32 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2383,35 +1789,24 @@ struct ErrorCode32
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode32>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode32;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode32> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode32;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode33 {} // namespace _ErrorCode33
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode33
-{
-
-} // namespace _ErrorCode33
-
-struct ErrorCode33
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode33 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2419,35 +1814,24 @@ struct ErrorCode33
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode33>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode33;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode33> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode33;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode34 {} // namespace _ErrorCode34
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode34
-{
-
-} // namespace _ErrorCode34
-
-struct ErrorCode34
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode34 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2455,35 +1839,24 @@ struct ErrorCode34
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode34>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode34;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode34> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode34;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode35 {} // namespace _ErrorCode35
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode35
-{
-
-} // namespace _ErrorCode35
-
-struct ErrorCode35
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode35 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2491,35 +1864,24 @@ struct ErrorCode35
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode35>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode35;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode35> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode35;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode36 {} // namespace _ErrorCode36
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _ErrorCode36
-{
-
-} // namespace _ErrorCode36
-
-struct ErrorCode36
-{
-    static constexpr auto L = level::ERR;
-    using metadata_types = std::tuple<>;
+struct ErrorCode36 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
 } // namespace Fault
@@ -2527,79 +1889,291 @@ struct ErrorCode36
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode36>
-{
-    using type = org::open_power::Witherspoon::Fault::ErrorCode36;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode36> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode36;
+};
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode37 {} // namespace _ErrorCode37
+
+struct ErrorCode37 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
 
-} // namespace details
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerSequencerVoltageFault
-{
+namespace details {
 
-struct RAIL
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAIL";
-    using type = std::tuple<std::decay_t<decltype("RAIL=%d")>, uint16_t>;
-    explicit constexpr RAIL(uint16_t a) : _entry(entry("RAIL=%d", a)){};
-    type _entry;
+template <>
+struct map_exception_type<
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode37> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode37;
 };
-struct RAIL_NAME
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAIL_NAME";
-    using type =
-        std::tuple<std::decay_t<decltype("RAIL_NAME=%s")>, const char*>;
-    explicit constexpr RAIL_NAME(const char* a) :
-        _entry(entry("RAIL_NAME=%s", a)){};
-    type _entry;
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode38 {} // namespace _ErrorCode38
+
+struct ErrorCode38 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
 };
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+namespace details {
+
+template <>
+struct map_exception_type<
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode38> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode38;
+};
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode39 {} // namespace _ErrorCode39
+
+struct ErrorCode39 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
+};
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+namespace details {
+
+template <>
+struct map_exception_type<
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode39> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode39;
+};
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode40 {} // namespace _ErrorCode40
+
+struct ErrorCode40 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
+};
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+namespace details {
+
+template <>
+struct map_exception_type<
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode40> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode40;
+};
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode41 {} // namespace _ErrorCode41
+
+struct ErrorCode41 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
+};
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+namespace details {
+
+template <>
+struct map_exception_type<
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode41> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode41;
+};
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode42 {} // namespace _ErrorCode42
+
+struct ErrorCode42 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
+};
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+namespace details {
+
+template <>
+struct map_exception_type<
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode42> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode42;
+};
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode43 {} // namespace _ErrorCode43
+
+struct ErrorCode43 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
+};
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+namespace details {
+
+template <>
+struct map_exception_type<
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode43> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode43;
+};
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode44 {} // namespace _ErrorCode44
+
+struct ErrorCode44 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
+};
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+namespace details {
+
+template <>
+struct map_exception_type<
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode44> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode44;
+};
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _ErrorCode45 {} // namespace _ErrorCode45
+
+struct ErrorCode45 {
+  static constexpr auto L = level::ERR;
+  using metadata_types = std::tuple<>;
+};
+
+} // namespace Fault
+} // namespace Witherspoon
+} // namespace open_power
+} // namespace org
+
+namespace details {
+
+template <>
+struct map_exception_type<
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::ErrorCode45> {
+  using type = org::open_power::Witherspoon::Fault::ErrorCode45;
+};
+}
+
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerSequencerVoltageFault {
+
+struct RAIL {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAIL";
+  using type = std::tuple<std::decay_t<decltype("RAIL=%d")>, uint16_t>;
+  explicit constexpr RAIL(uint16_t a) : _entry(entry("RAIL=%d", a)){};
+  type _entry;
+};
+struct RAIL_NAME {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAIL_NAME";
+  using type = std::tuple<std::decay_t<decltype("RAIL_NAME=%s")>, const char *>;
+  explicit constexpr RAIL_NAME(const char *a)
+      : _entry(entry("RAIL_NAME=%s", a)){};
+  type _entry;
+};
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _PowerSequencerVoltageFault
 
-struct PowerSequencerVoltageFault
-{
-    static constexpr auto L = level::ERR;
-    using RAIL = _PowerSequencerVoltageFault::RAIL;
-    using RAIL_NAME = _PowerSequencerVoltageFault::RAIL_NAME;
-    using RAW_STATUS = _PowerSequencerVoltageFault::RAW_STATUS;
-    using metadata_types = std::tuple<RAIL, RAIL_NAME, RAW_STATUS>;
+struct PowerSequencerVoltageFault {
+  static constexpr auto L = level::ERR;
+  using RAIL = _PowerSequencerVoltageFault::RAIL;
+  using RAIL_NAME = _PowerSequencerVoltageFault::RAIL_NAME;
+  using RAW_STATUS = _PowerSequencerVoltageFault::RAW_STATUS;
+  using metadata_types = std::tuple<RAIL, RAIL_NAME, RAW_STATUS>;
 };
 
 } // namespace Fault
@@ -2607,81 +2181,67 @@ struct PowerSequencerVoltageFault
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::
-                              Error::PowerSequencerVoltageFault>
-{
-    using type =
-        org::open_power::Witherspoon::Fault::PowerSequencerVoltageFault;
+                              Error::PowerSequencerVoltageFault> {
+  using type = org::open_power::Witherspoon::Fault::PowerSequencerVoltageFault;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerSequencerPGOODFault {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerSequencerPGOODFault
-{
-
-struct INPUT_NUM
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "INPUT_NUM";
-    using type = std::tuple<std::decay_t<decltype("INPUT_NUM=%d")>, uint16_t>;
-    explicit constexpr INPUT_NUM(uint16_t a) :
-        _entry(entry("INPUT_NUM=%d", a)){};
-    type _entry;
+struct INPUT_NUM {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "INPUT_NUM";
+  using type = std::tuple<std::decay_t<decltype("INPUT_NUM=%d")>, uint16_t>;
+  explicit constexpr INPUT_NUM(uint16_t a) : _entry(entry("INPUT_NUM=%d", a)){};
+  type _entry;
 };
-struct INPUT_NAME
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "INPUT_NAME";
-    using type =
-        std::tuple<std::decay_t<decltype("INPUT_NAME=%s")>, const char*>;
-    explicit constexpr INPUT_NAME(const char* a) :
-        _entry(entry("INPUT_NAME=%s", a)){};
-    type _entry;
+struct INPUT_NAME {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "INPUT_NAME";
+  using type =
+      std::tuple<std::decay_t<decltype("INPUT_NAME=%s")>, const char *>;
+  explicit constexpr INPUT_NAME(const char *a)
+      : _entry(entry("INPUT_NAME=%s", a)){};
+  type _entry;
 };
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _PowerSequencerPGOODFault
 
-struct PowerSequencerPGOODFault
-{
-    static constexpr auto L = level::ERR;
-    using INPUT_NUM = _PowerSequencerPGOODFault::INPUT_NUM;
-    using INPUT_NAME = _PowerSequencerPGOODFault::INPUT_NAME;
-    using RAW_STATUS = _PowerSequencerPGOODFault::RAW_STATUS;
-    using metadata_types = std::tuple<INPUT_NUM, INPUT_NAME, RAW_STATUS>;
+struct PowerSequencerPGOODFault {
+  static constexpr auto L = level::ERR;
+  using INPUT_NUM = _PowerSequencerPGOODFault::INPUT_NUM;
+  using INPUT_NAME = _PowerSequencerPGOODFault::INPUT_NAME;
+  using RAW_STATUS = _PowerSequencerPGOODFault::RAW_STATUS;
+  using metadata_types = std::tuple<INPUT_NUM, INPUT_NAME, RAW_STATUS>;
 };
 
 } // namespace Fault
@@ -2689,51 +2249,41 @@ struct PowerSequencerPGOODFault
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::
-                              Error::PowerSequencerPGOODFault>
-{
-    using type = org::open_power::Witherspoon::Fault::PowerSequencerPGOODFault;
+                              Error::PowerSequencerPGOODFault> {
+  using type = org::open_power::Witherspoon::Fault::PowerSequencerPGOODFault;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerSequencerFault {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerSequencerFault
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _PowerSequencerFault
 
-struct PowerSequencerFault
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _PowerSequencerFault::RAW_STATUS;
-    using metadata_types = std::tuple<RAW_STATUS>;
+struct PowerSequencerFault {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _PowerSequencerFault::RAW_STATUS;
+  using metadata_types = std::tuple<RAW_STATUS>;
 };
 
 } // namespace Fault
@@ -2741,66 +2291,54 @@ struct PowerSequencerFault
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
-struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::PowerSequencerFault>
-{
-    using type = org::open_power::Witherspoon::Fault::PowerSequencerFault;
+struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::
+                              Error::PowerSequencerFault> {
+  using type = org::open_power::Witherspoon::Fault::PowerSequencerFault;
 };
+}
 
-} // namespace details
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace _Device {
 
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace _Device
-{
-
-struct CALLOUT_ERRNO
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "CALLOUT_ERRNO";
-    using type =
-        std::tuple<std::decay_t<decltype("CALLOUT_ERRNO=%d")>, int32_t>;
-    explicit constexpr CALLOUT_ERRNO(int32_t a) :
-        _entry(entry("CALLOUT_ERRNO=%d", a)){};
-    type _entry;
+struct CALLOUT_ERRNO {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "CALLOUT_ERRNO";
+  using type = std::tuple<std::decay_t<decltype("CALLOUT_ERRNO=%d")>, int32_t>;
+  explicit constexpr CALLOUT_ERRNO(int32_t a)
+      : _entry(entry("CALLOUT_ERRNO=%d", a)){};
+  type _entry;
 };
-struct CALLOUT_DEVICE_PATH
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "CALLOUT_DEVICE_PATH";
-    using type = std::tuple<std::decay_t<decltype("CALLOUT_DEVICE_PATH=%s")>,
-                            const char*>;
-    explicit constexpr CALLOUT_DEVICE_PATH(const char* a) :
-        _entry(entry("CALLOUT_DEVICE_PATH=%s", a)){};
-    type _entry;
+struct CALLOUT_DEVICE_PATH {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "CALLOUT_DEVICE_PATH";
+  using type = std::tuple<std::decay_t<decltype("CALLOUT_DEVICE_PATH=%s")>,
+                          const char *>;
+  explicit constexpr CALLOUT_DEVICE_PATH(const char *a)
+      : _entry(entry("CALLOUT_DEVICE_PATH=%s", a)){};
+  type _entry;
 };
 
 } // namespace _Device
 
-struct Device
-{
-    static constexpr auto L = level::ERR;
-    using CALLOUT_ERRNO = _Device::CALLOUT_ERRNO;
-    using CALLOUT_DEVICE_PATH = _Device::CALLOUT_DEVICE_PATH;
-    using metadata_types = std::tuple<CALLOUT_ERRNO, CALLOUT_DEVICE_PATH>;
+struct Device {
+  static constexpr auto L = level::ERR;
+  using CALLOUT_ERRNO = _Device::CALLOUT_ERRNO;
+  using CALLOUT_DEVICE_PATH = _Device::CALLOUT_DEVICE_PATH;
+  using metadata_types = std::tuple<CALLOUT_ERRNO, CALLOUT_DEVICE_PATH>;
 };
 
 } // namespace Callout
@@ -2808,56 +2346,46 @@ struct Device
 } // namespace openbmc_project
 } // namespace xyz
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::xyz::openbmc_project::Common::Callout::Error::Device>
-{
-    using type = xyz::openbmc_project::Common::Callout::Device;
+    sdbusplus::xyz::openbmc_project::Common::Callout::Error::Device> {
+  using type = xyz::openbmc_project::Common::Callout::Device;
 };
+}
 
-} // namespace details
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace _GPIO {
 
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace _GPIO
-{
-
-struct CALLOUT_GPIO_NUM
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "CALLOUT_GPIO_NUM";
-    using type =
-        std::tuple<std::decay_t<decltype("CALLOUT_GPIO_NUM=%u")>, uint32_t>;
-    explicit constexpr CALLOUT_GPIO_NUM(uint32_t a) :
-        _entry(entry("CALLOUT_GPIO_NUM=%u", a)){};
-    type _entry;
+struct CALLOUT_GPIO_NUM {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "CALLOUT_GPIO_NUM";
+  using type =
+      std::tuple<std::decay_t<decltype("CALLOUT_GPIO_NUM=%u")>, uint32_t>;
+  explicit constexpr CALLOUT_GPIO_NUM(uint32_t a)
+      : _entry(entry("CALLOUT_GPIO_NUM=%u", a)){};
+  type _entry;
 };
 
 } // namespace _GPIO
 
-struct GPIO
-{
-    static constexpr auto L = level::ERR;
-    using CALLOUT_GPIO_NUM = _GPIO::CALLOUT_GPIO_NUM;
-    using CALLOUT_ERRNO =
-        xyz::openbmc_project::Common::Callout::Device::CALLOUT_ERRNO;
-    using CALLOUT_DEVICE_PATH =
-        xyz::openbmc_project::Common::Callout::Device::CALLOUT_DEVICE_PATH;
-    using metadata_types =
-        std::tuple<CALLOUT_GPIO_NUM, CALLOUT_ERRNO, CALLOUT_DEVICE_PATH>;
+struct GPIO {
+  static constexpr auto L = level::ERR;
+  using CALLOUT_GPIO_NUM = _GPIO::CALLOUT_GPIO_NUM;
+  using CALLOUT_ERRNO =
+      xyz::openbmc_project::Common::Callout::Device::CALLOUT_ERRNO;
+  using CALLOUT_DEVICE_PATH =
+      xyz::openbmc_project::Common::Callout::Device::CALLOUT_DEVICE_PATH;
+  using metadata_types =
+      std::tuple<CALLOUT_GPIO_NUM, CALLOUT_ERRNO, CALLOUT_DEVICE_PATH>;
 };
 
 } // namespace Callout
@@ -2865,71 +2393,60 @@ struct GPIO
 } // namespace openbmc_project
 } // namespace xyz
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::xyz::openbmc_project::Common::Callout::Error::GPIO>
-{
-    using type = xyz::openbmc_project::Common::Callout::GPIO;
+    sdbusplus::xyz::openbmc_project::Common::Callout::Error::GPIO> {
+  using type = xyz::openbmc_project::Common::Callout::GPIO;
 };
+}
 
-} // namespace details
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace _IIC {
 
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace _IIC
-{
-
-struct CALLOUT_IIC_BUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "CALLOUT_IIC_BUS";
-    using type =
-        std::tuple<std::decay_t<decltype("CALLOUT_IIC_BUS=%s")>, const char*>;
-    explicit constexpr CALLOUT_IIC_BUS(const char* a) :
-        _entry(entry("CALLOUT_IIC_BUS=%s", a)){};
-    type _entry;
+struct CALLOUT_IIC_BUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "CALLOUT_IIC_BUS";
+  using type =
+      std::tuple<std::decay_t<decltype("CALLOUT_IIC_BUS=%s")>, const char *>;
+  explicit constexpr CALLOUT_IIC_BUS(const char *a)
+      : _entry(entry("CALLOUT_IIC_BUS=%s", a)){};
+  type _entry;
 };
-struct CALLOUT_IIC_ADDR
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "CALLOUT_IIC_ADDR";
-    using type =
-        std::tuple<std::decay_t<decltype("CALLOUT_IIC_ADDR=0x%hx")>, uint16_t>;
-    explicit constexpr CALLOUT_IIC_ADDR(uint16_t a) :
-        _entry(entry("CALLOUT_IIC_ADDR=0x%hx", a)){};
-    type _entry;
+struct CALLOUT_IIC_ADDR {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "CALLOUT_IIC_ADDR";
+  using type =
+      std::tuple<std::decay_t<decltype("CALLOUT_IIC_ADDR=0x%hx")>, uint16_t>;
+  explicit constexpr CALLOUT_IIC_ADDR(uint16_t a)
+      : _entry(entry("CALLOUT_IIC_ADDR=0x%hx", a)){};
+  type _entry;
 };
 
 } // namespace _IIC
 
-struct IIC
-{
-    static constexpr auto L = level::ERR;
-    using CALLOUT_IIC_BUS = _IIC::CALLOUT_IIC_BUS;
-    using CALLOUT_IIC_ADDR = _IIC::CALLOUT_IIC_ADDR;
-    using CALLOUT_ERRNO =
-        xyz::openbmc_project::Common::Callout::Device::CALLOUT_ERRNO;
-    using CALLOUT_DEVICE_PATH =
-        xyz::openbmc_project::Common::Callout::Device::CALLOUT_DEVICE_PATH;
-    using metadata_types = std::tuple<CALLOUT_IIC_BUS, CALLOUT_IIC_ADDR,
-                                      CALLOUT_ERRNO, CALLOUT_DEVICE_PATH>;
+struct IIC {
+  static constexpr auto L = level::ERR;
+  using CALLOUT_IIC_BUS = _IIC::CALLOUT_IIC_BUS;
+  using CALLOUT_IIC_ADDR = _IIC::CALLOUT_IIC_ADDR;
+  using CALLOUT_ERRNO =
+      xyz::openbmc_project::Common::Callout::Device::CALLOUT_ERRNO;
+  using CALLOUT_DEVICE_PATH =
+      xyz::openbmc_project::Common::Callout::Device::CALLOUT_DEVICE_PATH;
+  using metadata_types = std::tuple<CALLOUT_IIC_BUS, CALLOUT_IIC_ADDR,
+                                    CALLOUT_ERRNO, CALLOUT_DEVICE_PATH>;
 };
 
 } // namespace Callout
@@ -2937,51 +2454,41 @@ struct IIC
 } // namespace openbmc_project
 } // namespace xyz
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::xyz::openbmc_project::Common::Callout::Error::IIC>
-{
-    using type = xyz::openbmc_project::Common::Callout::IIC;
+    sdbusplus::xyz::openbmc_project::Common::Callout::Error::IIC> {
+  using type = xyz::openbmc_project::Common::Callout::IIC;
 };
+}
 
-} // namespace details
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace _Inventory {
 
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace _Inventory
-{
-
-struct CALLOUT_INVENTORY_PATH
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "CALLOUT_INVENTORY_PATH";
-    using type = std::tuple<std::decay_t<decltype("CALLOUT_INVENTORY_PATH=%s")>,
-                            const char*>;
-    explicit constexpr CALLOUT_INVENTORY_PATH(const char* a) :
-        _entry(entry("CALLOUT_INVENTORY_PATH=%s", a)){};
-    type _entry;
+struct CALLOUT_INVENTORY_PATH {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "CALLOUT_INVENTORY_PATH";
+  using type = std::tuple<std::decay_t<decltype("CALLOUT_INVENTORY_PATH=%s")>,
+                          const char *>;
+  explicit constexpr CALLOUT_INVENTORY_PATH(const char *a)
+      : _entry(entry("CALLOUT_INVENTORY_PATH=%s", a)){};
+  type _entry;
 };
 
 } // namespace _Inventory
 
-struct Inventory
-{
-    static constexpr auto L = level::ERR;
-    using CALLOUT_INVENTORY_PATH = _Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<CALLOUT_INVENTORY_PATH>;
+struct Inventory {
+  static constexpr auto L = level::ERR;
+  using CALLOUT_INVENTORY_PATH = _Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Callout
@@ -2989,52 +2496,41 @@ struct Inventory
 } // namespace openbmc_project
 } // namespace xyz
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::xyz::openbmc_project::Common::Callout::Error::Inventory>
-{
-    using type = xyz::openbmc_project::Common::Callout::Inventory;
+    sdbusplus::xyz::openbmc_project::Common::Callout::Error::Inventory> {
+  using type = xyz::openbmc_project::Common::Callout::Inventory;
 };
+}
 
-} // namespace details
+namespace xyz {
+namespace openbmc_project {
+namespace Common {
+namespace Callout {
+namespace _IPMISensor {
 
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Common
-{
-namespace Callout
-{
-namespace _IPMISensor
-{
-
-struct CALLOUT_IPMI_SENSOR_NUM
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "CALLOUT_IPMI_SENSOR_NUM";
-    using type =
-        std::tuple<std::decay_t<decltype("CALLOUT_IPMI_SENSOR_NUM=%u")>,
-                   uint32_t>;
-    explicit constexpr CALLOUT_IPMI_SENSOR_NUM(uint32_t a) :
-        _entry(entry("CALLOUT_IPMI_SENSOR_NUM=%u", a)){};
-    type _entry;
+struct CALLOUT_IPMI_SENSOR_NUM {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "CALLOUT_IPMI_SENSOR_NUM";
+  using type = std::tuple<std::decay_t<decltype("CALLOUT_IPMI_SENSOR_NUM=%u")>,
+                          uint32_t>;
+  explicit constexpr CALLOUT_IPMI_SENSOR_NUM(uint32_t a)
+      : _entry(entry("CALLOUT_IPMI_SENSOR_NUM=%u", a)){};
+  type _entry;
 };
 
 } // namespace _IPMISensor
 
-struct IPMISensor
-{
-    static constexpr auto L = level::ERR;
-    using CALLOUT_IPMI_SENSOR_NUM = _IPMISensor::CALLOUT_IPMI_SENSOR_NUM;
-    using metadata_types = std::tuple<CALLOUT_IPMI_SENSOR_NUM>;
+struct IPMISensor {
+  static constexpr auto L = level::ERR;
+  using CALLOUT_IPMI_SENSOR_NUM = _IPMISensor::CALLOUT_IPMI_SENSOR_NUM;
+  using metadata_types = std::tuple<CALLOUT_IPMI_SENSOR_NUM>;
 };
 
 } // namespace Callout
@@ -3042,53 +2538,43 @@ struct IPMISensor
 } // namespace openbmc_project
 } // namespace xyz
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::xyz::openbmc_project::Common::Callout::Error::IPMISensor>
-{
-    using type = xyz::openbmc_project::Common::Callout::IPMISensor;
+    sdbusplus::xyz::openbmc_project::Common::Callout::Error::IPMISensor> {
+  using type = xyz::openbmc_project::Common::Callout::IPMISensor;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerSupplyInputFault {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerSupplyInputFault
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _PowerSupplyInputFault
 
-struct PowerSupplyInputFault
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _PowerSupplyInputFault::RAW_STATUS;
-    using CALLOUT_INVENTORY_PATH = xyz::openbmc_project::Common::Callout::
-        Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
+struct PowerSupplyInputFault {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _PowerSupplyInputFault::RAW_STATUS;
+  using CALLOUT_INVENTORY_PATH =
+      xyz::openbmc_project::Common::Callout::Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Fault
@@ -3096,53 +2582,43 @@ struct PowerSupplyInputFault
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::
-                              Error::PowerSupplyInputFault>
-{
-    using type = org::open_power::Witherspoon::Fault::PowerSupplyInputFault;
+                              Error::PowerSupplyInputFault> {
+  using type = org::open_power::Witherspoon::Fault::PowerSupplyInputFault;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerSupplyShouldBeOn {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerSupplyShouldBeOn
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _PowerSupplyShouldBeOn
 
-struct PowerSupplyShouldBeOn
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _PowerSupplyShouldBeOn::RAW_STATUS;
-    using CALLOUT_INVENTORY_PATH = xyz::openbmc_project::Common::Callout::
-        Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
+struct PowerSupplyShouldBeOn {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _PowerSupplyShouldBeOn::RAW_STATUS;
+  using CALLOUT_INVENTORY_PATH =
+      xyz::openbmc_project::Common::Callout::Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Fault
@@ -3150,53 +2626,43 @@ struct PowerSupplyShouldBeOn
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::
-                              Error::PowerSupplyShouldBeOn>
-{
-    using type = org::open_power::Witherspoon::Fault::PowerSupplyShouldBeOn;
+                              Error::PowerSupplyShouldBeOn> {
+  using type = org::open_power::Witherspoon::Fault::PowerSupplyShouldBeOn;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerSupplyOutputOvercurrent {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerSupplyOutputOvercurrent
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _PowerSupplyOutputOvercurrent
 
-struct PowerSupplyOutputOvercurrent
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _PowerSupplyOutputOvercurrent::RAW_STATUS;
-    using CALLOUT_INVENTORY_PATH = xyz::openbmc_project::Common::Callout::
-        Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
+struct PowerSupplyOutputOvercurrent {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _PowerSupplyOutputOvercurrent::RAW_STATUS;
+  using CALLOUT_INVENTORY_PATH =
+      xyz::openbmc_project::Common::Callout::Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Fault
@@ -3204,54 +2670,44 @@ struct PowerSupplyOutputOvercurrent
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::
-                              Error::PowerSupplyOutputOvercurrent>
-{
-    using type =
-        org::open_power::Witherspoon::Fault::PowerSupplyOutputOvercurrent;
+                              Error::PowerSupplyOutputOvercurrent> {
+  using type =
+      org::open_power::Witherspoon::Fault::PowerSupplyOutputOvercurrent;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerSupplyOutputOvervoltage {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerSupplyOutputOvervoltage
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _PowerSupplyOutputOvervoltage
 
-struct PowerSupplyOutputOvervoltage
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _PowerSupplyOutputOvervoltage::RAW_STATUS;
-    using CALLOUT_INVENTORY_PATH = xyz::openbmc_project::Common::Callout::
-        Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
+struct PowerSupplyOutputOvervoltage {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _PowerSupplyOutputOvervoltage::RAW_STATUS;
+  using CALLOUT_INVENTORY_PATH =
+      xyz::openbmc_project::Common::Callout::Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Fault
@@ -3259,54 +2715,44 @@ struct PowerSupplyOutputOvervoltage
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::
-                              Error::PowerSupplyOutputOvervoltage>
-{
-    using type =
-        org::open_power::Witherspoon::Fault::PowerSupplyOutputOvervoltage;
+                              Error::PowerSupplyOutputOvervoltage> {
+  using type =
+      org::open_power::Witherspoon::Fault::PowerSupplyOutputOvervoltage;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerSupplyFanFault {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerSupplyFanFault
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _PowerSupplyFanFault
 
-struct PowerSupplyFanFault
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _PowerSupplyFanFault::RAW_STATUS;
-    using CALLOUT_INVENTORY_PATH = xyz::openbmc_project::Common::Callout::
-        Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
+struct PowerSupplyFanFault {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _PowerSupplyFanFault::RAW_STATUS;
+  using CALLOUT_INVENTORY_PATH =
+      xyz::openbmc_project::Common::Callout::Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Fault
@@ -3314,53 +2760,43 @@ struct PowerSupplyFanFault
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
-struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::PowerSupplyFanFault>
-{
-    using type = org::open_power::Witherspoon::Fault::PowerSupplyFanFault;
+struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::
+                              Error::PowerSupplyFanFault> {
+  using type = org::open_power::Witherspoon::Fault::PowerSupplyFanFault;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _PowerSupplyTemperatureFault {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _PowerSupplyTemperatureFault
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _PowerSupplyTemperatureFault
 
-struct PowerSupplyTemperatureFault
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _PowerSupplyTemperatureFault::RAW_STATUS;
-    using CALLOUT_INVENTORY_PATH = xyz::openbmc_project::Common::Callout::
-        Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
+struct PowerSupplyTemperatureFault {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _PowerSupplyTemperatureFault::RAW_STATUS;
+  using CALLOUT_INVENTORY_PATH =
+      xyz::openbmc_project::Common::Callout::Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Fault
@@ -3368,54 +2804,43 @@ struct PowerSupplyTemperatureFault
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<sdbusplus::org::open_power::Witherspoon::Fault::
-                              Error::PowerSupplyTemperatureFault>
-{
-    using type =
-        org::open_power::Witherspoon::Fault::PowerSupplyTemperatureFault;
+                              Error::PowerSupplyTemperatureFault> {
+  using type = org::open_power::Witherspoon::Fault::PowerSupplyTemperatureFault;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _GPUPowerFault {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _GPUPowerFault
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _GPUPowerFault
 
-struct GPUPowerFault
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _GPUPowerFault::RAW_STATUS;
-    using CALLOUT_INVENTORY_PATH = xyz::openbmc_project::Common::Callout::
-        Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
+struct GPUPowerFault {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _GPUPowerFault::RAW_STATUS;
+  using CALLOUT_INVENTORY_PATH =
+      xyz::openbmc_project::Common::Callout::Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Fault
@@ -3423,53 +2848,43 @@ struct GPUPowerFault
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::GPUPowerFault>
-{
-    using type = org::open_power::Witherspoon::Fault::GPUPowerFault;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::GPUPowerFault> {
+  using type = org::open_power::Witherspoon::Fault::GPUPowerFault;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _GPUOverTemp {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _GPUOverTemp
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _GPUOverTemp
 
-struct GPUOverTemp
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _GPUOverTemp::RAW_STATUS;
-    using CALLOUT_INVENTORY_PATH = xyz::openbmc_project::Common::Callout::
-        Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
+struct GPUOverTemp {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _GPUOverTemp::RAW_STATUS;
+  using CALLOUT_INVENTORY_PATH =
+      xyz::openbmc_project::Common::Callout::Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Fault
@@ -3477,53 +2892,43 @@ struct GPUOverTemp
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::GPUOverTemp>
-{
-    using type = org::open_power::Witherspoon::Fault::GPUOverTemp;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::GPUOverTemp> {
+  using type = org::open_power::Witherspoon::Fault::GPUOverTemp;
 };
+}
 
-} // namespace details
+namespace org {
+namespace open_power {
+namespace Witherspoon {
+namespace Fault {
+namespace _MemoryPowerFault {
 
-namespace org
-{
-namespace open_power
-{
-namespace Witherspoon
-{
-namespace Fault
-{
-namespace _MemoryPowerFault
-{
-
-struct RAW_STATUS
-{
-    /*
-     * We can't use -fsanitize=undefined if we declare a
-     * 'static constexpr auto str' member, so don't. Instead, open-code the
-     * mako template lookups.
-     */
-    static constexpr auto str_short = "RAW_STATUS";
-    using type =
-        std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char*>;
-    explicit constexpr RAW_STATUS(const char* a) :
-        _entry(entry("RAW_STATUS=%s", a)){};
-    type _entry;
+struct RAW_STATUS {
+  /*
+   * We can't use -fsanitize=undefined if we declare a
+   * 'static constexpr auto str' member, so don't. Instead, open-code the
+   * mako template lookups.
+   */
+  static constexpr auto str_short = "RAW_STATUS";
+  using type =
+      std::tuple<std::decay_t<decltype("RAW_STATUS=%s")>, const char *>;
+  explicit constexpr RAW_STATUS(const char *a)
+      : _entry(entry("RAW_STATUS=%s", a)){};
+  type _entry;
 };
 
 } // namespace _MemoryPowerFault
 
-struct MemoryPowerFault
-{
-    static constexpr auto L = level::ERR;
-    using RAW_STATUS = _MemoryPowerFault::RAW_STATUS;
-    using CALLOUT_INVENTORY_PATH = xyz::openbmc_project::Common::Callout::
-        Inventory::CALLOUT_INVENTORY_PATH;
-    using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
+struct MemoryPowerFault {
+  static constexpr auto L = level::ERR;
+  using RAW_STATUS = _MemoryPowerFault::RAW_STATUS;
+  using CALLOUT_INVENTORY_PATH =
+      xyz::openbmc_project::Common::Callout::Inventory::CALLOUT_INVENTORY_PATH;
+  using metadata_types = std::tuple<RAW_STATUS, CALLOUT_INVENTORY_PATH>;
 };
 
 } // namespace Fault
@@ -3531,17 +2936,14 @@ struct MemoryPowerFault
 } // namespace open_power
 } // namespace org
 
-namespace details
-{
+namespace details {
 
 template <>
 struct map_exception_type<
-    sdbusplus::org::open_power::Witherspoon::Fault::Error::MemoryPowerFault>
-{
-    using type = org::open_power::Witherspoon::Fault::MemoryPowerFault;
+    sdbusplus::org::open_power::Witherspoon::Fault::Error::MemoryPowerFault> {
+  using type = org::open_power::Witherspoon::Fault::MemoryPowerFault;
 };
-
-} // namespace details
+}
 
 } // namespace logging
 

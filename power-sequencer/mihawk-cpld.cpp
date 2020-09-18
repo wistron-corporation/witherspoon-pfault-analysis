@@ -183,8 +183,37 @@ void MIHAWKCPLD::onFailure()
             case ErrorCode::_36:
                 report<ErrorCode36>();
                 break;
+#ifdef MOWGLICPLD_DEVICE_ACCESS
+            case ErrorCode::_37:
+                report<ErrorCode37>();
+                break;
+            case ErrorCode::_38:
+                report<ErrorCode38>();
+                break;
+            case ErrorCode::_39:
+                report<ErrorCode39>();
+                break;
+            case ErrorCode::_40:
+                report<ErrorCode40>();
+                break;
+            case ErrorCode::_41:
+                report<ErrorCode41>();
+                break;
+            case ErrorCode::_42:
+                report<ErrorCode42>();
+                break;
+            case ErrorCode::_43:
+                report<ErrorCode43>();
+                break;
+            case ErrorCode::_44:
+                report<ErrorCode44>();
+                break;
+            case ErrorCode::_45:
+                report<ErrorCode45>();
+                break;
+#endif
             default:
-                // If the errorcode isn't 1~36,
+                // If the errorcode isn't 1~45(Mihawk:1~36),
                 // it indicates that the CPLD register
                 // has a reading issue,
                 // so the errorcode0 error is reported.
@@ -368,8 +397,46 @@ void MIHAWKCPLD::analyze()
                         report<ErrorCode36>();
                         errorcodeMask = 1;
                         break;
+#ifdef MOWGLICPLD_DEVICE_ACCESS
+                    case ErrorCode::_37:
+                        report<ErrorCode37>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_38:
+                        report<ErrorCode38>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_39:
+                        report<ErrorCode39>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_40:
+                        report<ErrorCode40>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_41:
+                        report<ErrorCode41>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_42:
+                        report<ErrorCode42>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_43:
+                        report<ErrorCode43>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_44:
+                        report<ErrorCode44>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_45:
+                        report<ErrorCode45>();
+                        errorcodeMask = 1;
+                        break;
+#endif
                     default:
-                        // If the errorcode is not 1~36,
+                        // If the errorcode is not 1~45(Mihawk:1~36),
                         // it indicates that the CPLD register
                         // has a reading issue, so the
                         // errorcode0 error is reported.
