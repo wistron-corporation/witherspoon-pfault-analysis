@@ -193,24 +193,6 @@ void MIHAWKCPLD::onFailure()
             case ErrorCode::_39:
                 report<ErrorCode39>();
                 break;
-            case ErrorCode::_40:
-                report<ErrorCode40>();
-                break;
-            case ErrorCode::_41:
-                report<ErrorCode41>();
-                break;
-            case ErrorCode::_42:
-                report<ErrorCode42>();
-                break;
-            case ErrorCode::_43:
-                report<ErrorCode43>();
-                break;
-            case ErrorCode::_44:
-                report<ErrorCode44>();
-                break;
-            case ErrorCode::_45:
-                report<ErrorCode45>();
-                break;
 #endif
             default:
                 // If the errorcode isn't 1~45(Mihawk:1~36),
