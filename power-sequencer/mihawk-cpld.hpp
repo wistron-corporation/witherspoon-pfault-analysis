@@ -76,6 +76,14 @@ class MIHAWKCPLD : public Device
     int readFromCPLDErrorCode(int statusReg);
 
     /**
+     * Confirm the Mowgli's HDD status(fault or rebuild).
+     *
+     * @param[in] statusReg - I2C's statusReg, slaveAddr
+     * offset.
+     */
+    int checkFault(int statusReg);
+
+    /**
      * Checks for PoweronFault on Mihawk's
      * CPLD-power_on-error-interrupt-bit-register
      * whether is transfered to "1".
@@ -108,6 +116,16 @@ class MIHAWKCPLD : public Device
      * whether is created again.
      */
     bool errorcodeMask;
+
+    /**
+     * The flag of Mowgli's HDD-fault status
+     */
+    bool faultcodeMask;
+
+    /**
+     * The flag of Mowgli's HDD-rebuild status
+     */
+    bool rebuildcodeMask;
 
     enum class ErrorCode : int
     {
@@ -355,6 +373,42 @@ class MIHAWKCPLD : public Device
          */
         _39 = 38
 
+    };
+
+    enum class HDDErrorCode : int
+    {
+        /**
+         * The definition of CPLD-HDD-Fault-code:
+         * HDD_0 fail.
+         */
+        _0 = 1,
+
+        /**
+         * The definition of CPLD-HDD-Fault-code:
+         * HDD_1 fail.
+         */
+        _1 = 2
+    };
+
+    enum class HDDRebuildCode : int
+    {
+        /**
+         * The definition of CPLD-HDD-Rebuild-code:
+         * HDD_0 or HDD_1 ends to rebuild.
+         */
+        _0 = 0,
+
+        /**
+         * The definition of CPLD-HDD-Rebuild-code:
+         * HDD_0 starts to rebuild.
+         */
+        _1 = 1,
+
+        /**
+         * The definition of CPLD-HDD-Rebuild-code:
+         * HDD_1 starts to rebuild.
+         */
+        _2 = 2
     };
 };
 

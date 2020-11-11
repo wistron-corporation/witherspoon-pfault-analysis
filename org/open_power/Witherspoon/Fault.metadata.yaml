@@ -172,23 +172,20 @@
 - name: ErrorCode39
   level: ERR
 
-- name: ErrorCode40
+- name: HDDErrorCode0
   level: ERR
 
-- name: ErrorCode41
+- name: HDDErrorCode1
   level: ERR
 
-- name: ErrorCode42
-  level: ERR
+- name: HDDRebuildCode0
+  level: INFO
 
-- name: ErrorCode43
-  level: ERR
+- name: HDDRebuildCode1
+  level: INFO
 
-- name: ErrorCode44
-  level: ERR
-
-- name: ErrorCode45
-  level: ERR
+- name: HDDRebuildCode2
+  level: INFO
 
 - name: PowerSequencerVoltageFault
   level: ERR

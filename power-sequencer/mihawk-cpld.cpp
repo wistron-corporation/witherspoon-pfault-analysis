@@ -44,6 +44,12 @@ const static constexpr size_t StatusReg_2 = 0x21;
 // SMLink Status Register(Power-ready error code Register)
 const static constexpr size_t StatusReg_3 = 0x22;
 
+// SMLink Status Register(Mowgli's HDD 0~7 fault status Register)
+const static constexpr size_t StatusReg_4 = 0x40;
+
+// SMLink Status Register(Mowgli's HDD 0~7 rebuild status Register)
+const static constexpr size_t StatusReg_5 = 0x43;
+
 using namespace std;
 namespace witherspoon
 {
@@ -414,6 +420,57 @@ void MIHAWKCPLD::analyze()
         // we clear errorcodeMask.
         errorcodeMask = 0;
     }
+
+#ifdef MOWGLICPLD_DEVICE_ACCESS
+    HDDErrorCode code0;
+    code0 = static_cast<HDDErrorCode>(checkFault(StatusReg_4));
+
+    HDDRebuildCode code1;
+    code1 = static_cast<HDDRebuildCode>(checkFault(StatusReg_5));
+
+    if (!faultcodeMask)
+    {
+        switch (code0)
+        {
+            case HDDErrorCode::_0:
+                report<HDDErrorCode0>();
+                faultcodeMask = 1;
+                break;
+            case HDDErrorCode::_1:
+                report<HDDErrorCode1>();
+                faultcodeMask = 1;
+                break;
+            default:
+                faultcodeMask = 0;
+                break;
+        }
+    }
+
+    switch (code1)
+    {
+        case HDDRebuildCode::_1:
+            if (!rebuildcodeMask)
+            {
+                report<HDDRebuildCode1>();
+                rebuildcodeMask = 1;
+            }
+            break;
+        case HDDRebuildCode::_2:
+            if (!rebuildcodeMask)
+            {
+                report<HDDRebuildCode1>();
+                rebuildcodeMask = 1;
+            }
+            break;
+        default:
+            if (rebuildcodeMask)
+            {
+                report<HDDRebuildCode0>();
+            }
+            rebuildcodeMask = 0;
+            break;
+    }
+#endif
 }
 
 // Check for PoweronFault
@@ -623,6 +680,66 @@ void MIHAWKCPLD::clearCPLDregister()
         std::cerr << "i2c_smbus_write_byte_data failed \n";
     }
     close(fd);
+}
+
+// Check for Mowgli's HDDFault
+int MIHAWKCPLD::checkFault(int reg)
+{
+    int result = 0;
+    std::string i2cBus = "/dev/i2c-" + std::to_string(busId);
+
+    // open i2c device(CPLD-PSU-register table)
+    int fd = open(i2cBus.c_str(), O_RDWR | O_CLOEXEC);
+    if (fd < 0)
+    {
+        std::cerr << "Unable to open i2c device \n";
+    }
+
+    // set i2c slave address
+    if (ioctl(fd, I2C_SLAVE_FORCE, slaveAddr) < 0)
+    {
+        std::cerr << "Unable to set device address \n";
+        close(fd);
+    }
+
+    // check whether support i2c function
+    unsigned long funcs = 0;
+    if (ioctl(fd, I2C_FUNCS, &funcs) < 0)
+    {
+        std::cerr << "Not support I2C_FUNCS \n";
+        close(fd);
+    }
+
+    // check whether support i2c-read function
+    if (!(funcs & I2C_FUNC_SMBUS_READ_BYTE_DATA))
+    {
+        std::cerr << "Not support I2C_FUNC_SMBUS_READ_BYTE_DATA \n";
+        close(fd);
+    }
+
+    int statusValue;
+
+    statusValue = i2c_smbus_read_byte_data(fd, reg);
+    close(fd);
+
+    if (statusValue < 0)
+    {
+        std::cerr << "i2c_smbus_read_byte_data failed \n";
+        result = 0;
+    }
+    else
+    {
+        if (statusValue & 1)
+        {
+            result = 1;
+        }
+        else if ((statusValue >> 1) & 1)
+        {
+            result = 2;
+        }
+    }
+
+    return result;
 }
 
 } // namespace power

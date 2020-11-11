@@ -144,23 +144,20 @@
 - name: ErrorCode39
   description: CPLD's error reason is P0V92_pgood Fail
 
-- name: ErrorCode40
-  description: CPLD's error reason is P5V0VCSA_pgood Fail
+- name: HDDErrorCode0
+  description: CPLD's error reason is HDD_0 fail
+  
+- name: HDDErrorCode1
+  description: CPLD's error reason is HDD_1 fail
 
-- name: ErrorCode41
-  description: CPLD's error reason is P1V1VCSA_pgood Fail
+- name: HDDRebuildCode0
+  description: HDD_0 or HDD_1 ends to rebuild
 
-- name: ErrorCode42
-  description: CPLD's error reason is P3V3VCSA_pgood Fail
+- name: HDDRebuildCode1
+  description: HDD_0 starts to rebuild
 
-- name: ErrorCode43
-  description: CPLD's error reason is P2V5VCSA_pgood Fail
-
-- name: ErrorCode44
-  description: CPLD's error reason is P1V2VCSA_pgood Fail
-
-- name: ErrorCode45
-  description: CPLD's error reason is P1V15VCSA_pgood Fail
+- name: HDDRebuildCode2
+  description: HDD_1 starts to rebuild
 
 - name: PowerSequencerVoltageFault
   description: The power sequencer chip detected a voltage fault
