@@ -27,8 +27,12 @@ extern "C" {
 #include <linux/i2c.h>
 }
 
-// i2c bus & i2c slave address of Mihawk's CPLD
+// i2c bus & i2c slave address of Mihawk/Mowgli's CPLD
+#ifdef MOWGLICPLD_DEVICE_ACCESS
+#define busId 3
+#else
 #define busId 11
+#endif
 #define slaveAddr 0x40
 
 // SMLink Status Register(Interrupt-control-bit Register)
@@ -39,6 +43,12 @@ const static constexpr size_t StatusReg_2 = 0x21;
 
 // SMLink Status Register(Power-ready error code Register)
 const static constexpr size_t StatusReg_3 = 0x22;
+
+// SMLink Status Register(Mowgli's HDD 0~7 fault status Register)
+const static constexpr size_t StatusReg_4 = 0x40;
+
+// SMLink Status Register(Mowgli's HDD 0~7 rebuild status Register)
+const static constexpr size_t StatusReg_5 = 0x43;
 
 using namespace std;
 namespace witherspoon
@@ -179,8 +189,19 @@ void MIHAWKCPLD::onFailure()
             case ErrorCode::_36:
                 report<ErrorCode36>();
                 break;
+#ifdef MOWGLICPLD_DEVICE_ACCESS
+            case ErrorCode::_37:
+                report<ErrorCode37>();
+                break;
+            case ErrorCode::_38:
+                report<ErrorCode38>();
+                break;
+            case ErrorCode::_39:
+                report<ErrorCode39>();
+                break;
+#endif
             default:
-                // If the errorcode isn't 1~36,
+                // If the errorcode isn't 1~39(Mihawk:1~36),
                 // it indicates that the CPLD register
                 // has a reading issue,
                 // so the errorcode0 error is reported.
@@ -364,8 +385,22 @@ void MIHAWKCPLD::analyze()
                         report<ErrorCode36>();
                         errorcodeMask = 1;
                         break;
+#ifdef MOWGLICPLD_DEVICE_ACCESS
+                    case ErrorCode::_37:
+                        report<ErrorCode37>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_38:
+                        report<ErrorCode38>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_39:
+                        report<ErrorCode39>();
+                        errorcodeMask = 1;
+                        break;
+#endif
                     default:
-                        // If the errorcode is not 1~36,
+                        // If the errorcode is not 1~39(Mihawk:1~36),
                         // it indicates that the CPLD register
                         // has a reading issue, so the
                         // errorcode0 error is reported.
@@ -385,6 +420,57 @@ void MIHAWKCPLD::analyze()
         // we clear errorcodeMask.
         errorcodeMask = 0;
     }
+
+#ifdef MOWGLICPLD_DEVICE_ACCESS
+    HDDErrorCode code0;
+    code0 = static_cast<HDDErrorCode>(checkFault(StatusReg_4));
+
+    HDDRebuildCode code1;
+    code1 = static_cast<HDDRebuildCode>(checkFault(StatusReg_5));
+
+    if (!faultcodeMask)
+    {
+        switch (code0)
+        {
+            case HDDErrorCode::_0:
+                report<HDDErrorCode0>();
+                faultcodeMask = 1;
+                break;
+            case HDDErrorCode::_1:
+                report<HDDErrorCode1>();
+                faultcodeMask = 1;
+                break;
+            default:
+                faultcodeMask = 0;
+                break;
+        }
+    }
+
+    switch (code1)
+    {
+        case HDDRebuildCode::_1:
+            if (!rebuildcodeMask)
+            {
+                report<HDDRebuildCode1>();
+                rebuildcodeMask = 1;
+            }
+            break;
+        case HDDRebuildCode::_2:
+            if (!rebuildcodeMask)
+            {
+                report<HDDRebuildCode1>();
+                rebuildcodeMask = 1;
+            }
+            break;
+        default:
+            if (rebuildcodeMask)
+            {
+                report<HDDRebuildCode0>();
+            }
+            rebuildcodeMask = 0;
+            break;
+    }
+#endif
 }
 
 // Check for PoweronFault
@@ -594,6 +680,66 @@ void MIHAWKCPLD::clearCPLDregister()
         std::cerr << "i2c_smbus_write_byte_data failed \n";
     }
     close(fd);
+}
+
+// Check for Mowgli's HDDFault
+int MIHAWKCPLD::checkFault(int reg)
+{
+    int result = 0;
+    std::string i2cBus = "/dev/i2c-" + std::to_string(busId);
+
+    // open i2c device(CPLD-PSU-register table)
+    int fd = open(i2cBus.c_str(), O_RDWR | O_CLOEXEC);
+    if (fd < 0)
+    {
+        std::cerr << "Unable to open i2c device \n";
+    }
+
+    // set i2c slave address
+    if (ioctl(fd, I2C_SLAVE_FORCE, slaveAddr) < 0)
+    {
+        std::cerr << "Unable to set device address \n";
+        close(fd);
+    }
+
+    // check whether support i2c function
+    unsigned long funcs = 0;
+    if (ioctl(fd, I2C_FUNCS, &funcs) < 0)
+    {
+        std::cerr << "Not support I2C_FUNCS \n";
+        close(fd);
+    }
+
+    // check whether support i2c-read function
+    if (!(funcs & I2C_FUNC_SMBUS_READ_BYTE_DATA))
+    {
+        std::cerr << "Not support I2C_FUNC_SMBUS_READ_BYTE_DATA \n";
+        close(fd);
+    }
+
+    int statusValue;
+
+    statusValue = i2c_smbus_read_byte_data(fd, reg);
+    close(fd);
+
+    if (statusValue < 0)
+    {
+        std::cerr << "i2c_smbus_read_byte_data failed \n";
+        result = 0;
+    }
+    else
+    {
+        if (statusValue & 1)
+        {
+            result = 1;
+        }
+        else if ((statusValue >> 1) & 1)
+        {
+            result = 2;
+        }
+    }
+
+    return result;
 }
 
 } // namespace power

@@ -76,6 +76,14 @@ class MIHAWKCPLD : public Device
     int readFromCPLDErrorCode(int statusReg);
 
     /**
+     * Confirm the Mowgli's HDD status(fault or rebuild).
+     *
+     * @param[in] statusReg - I2C's statusReg, slaveAddr
+     * offset.
+     */
+    int checkFault(int statusReg);
+
+    /**
      * Checks for PoweronFault on Mihawk's
      * CPLD-power_on-error-interrupt-bit-register
      * whether is transfered to "1".
@@ -108,6 +116,16 @@ class MIHAWKCPLD : public Device
      * whether is created again.
      */
     bool errorcodeMask;
+
+    /**
+     * The flag of Mowgli's HDD-fault status
+     */
+    bool faultcodeMask;
+
+    /**
+     * The flag of Mowgli's HDD-rebuild status
+     */
+    bool rebuildcodeMask;
 
     enum class ErrorCode : int
     {
@@ -335,7 +353,62 @@ class MIHAWKCPLD : public Device
          * The definition of error-code:
          * PSU0PSU1_PGOOD fail.
          */
-        _36 = 170
+        _36 = 170,
+
+        /**
+         * The definition of error-code:
+         * P1V35_PGOOD fail.
+         */
+        _37 = 36,
+
+        /**
+         * The definition of error-code:
+         * P1V2_PGOOD fail.
+         */
+        _38 = 37,
+
+        /**
+         * The definition of error-code:
+         * P0V92_PGOOD fail.
+         */
+        _39 = 38
+
+    };
+
+    enum class HDDErrorCode : int
+    {
+        /**
+         * The definition of CPLD-HDD-Fault-code:
+         * HDD_0 fail.
+         */
+        _0 = 1,
+
+        /**
+         * The definition of CPLD-HDD-Fault-code:
+         * HDD_1 fail.
+         */
+        _1 = 2
+    };
+
+    enum class HDDRebuildCode : int
+    {
+        /**
+         * The definition of CPLD-HDD-Rebuild-code:
+         * HDD_0 or HDD_1 ends to rebuild.
+         */
+        _0 = 0,
+
+        /**
+         * The definition of CPLD-HDD-Rebuild-code:
+         * HDD_0 starts to rebuild.
+         */
+        _1 = 1,
+
+        /**
+         * The definition of CPLD-HDD-Rebuild-code:
+         * HDD_1 starts to rebuild.
+         */
+        _2 = 2
     };
 };
 
