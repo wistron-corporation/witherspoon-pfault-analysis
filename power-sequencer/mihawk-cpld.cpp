@@ -422,44 +422,38 @@ void MIHAWKCPLD::analyze()
     }
 
 #ifdef MOWGLICPLD_DEVICE_ACCESS
-    HDDErrorCode code0;
-    code0 = static_cast<HDDErrorCode>(checkFault(StatusReg_4));
-
-    HDDRebuildCode code1;
-    code1 = static_cast<HDDRebuildCode>(checkFault(StatusReg_5));
-
     if (!faultcodeMask)
     {
-        switch (code0)
+        switch (checkFault(StatusReg_4))
         {
-            case HDDErrorCode::_0:
+            case 1:
                 report<HDDErrorCode0>();
-                faultcodeMask = 1;
+                faultcodeMask = true;
                 break;
-            case HDDErrorCode::_1:
+            case 2:
                 report<HDDErrorCode1>();
-                faultcodeMask = 1;
+                faultcodeMask = true;
                 break;
             default:
-                faultcodeMask = 0;
+                faultcodeMask = false;
                 break;
         }
     }
 
-    switch (code1)
+    switch (checkFault(StatusReg_5))
     {
-        case HDDRebuildCode::_1:
+        case 1:
             if (!rebuildcodeMask)
             {
                 report<HDDRebuildCode1>();
-                rebuildcodeMask = 1;
+                rebuildcodeMask = true;
             }
             break;
-        case HDDRebuildCode::_2:
+        case 2:
             if (!rebuildcodeMask)
             {
-                report<HDDRebuildCode1>();
-                rebuildcodeMask = 1;
+                report<HDDRebuildCode2>();
+                rebuildcodeMask = true;
             }
             break;
         default:
@@ -467,7 +461,7 @@ void MIHAWKCPLD::analyze()
             {
                 report<HDDRebuildCode0>();
             }
-            rebuildcodeMask = 0;
+            rebuildcodeMask = false;
             break;
     }
 #endif
@@ -699,7 +693,7 @@ int MIHAWKCPLD::checkFault(int reg)
     if (ioctl(fd, I2C_SLAVE_FORCE, slaveAddr) < 0)
     {
         std::cerr << "Unable to set device address \n";
-        close(fd);
+        return result;
     }
 
     // check whether support i2c function
@@ -707,14 +701,14 @@ int MIHAWKCPLD::checkFault(int reg)
     if (ioctl(fd, I2C_FUNCS, &funcs) < 0)
     {
         std::cerr << "Not support I2C_FUNCS \n";
-        close(fd);
+        return result;
     }
 
     // check whether support i2c-read function
     if (!(funcs & I2C_FUNC_SMBUS_READ_BYTE_DATA))
     {
         std::cerr << "Not support I2C_FUNC_SMBUS_READ_BYTE_DATA \n";
-        close(fd);
+        return result;
     }
 
     int statusValue;
@@ -725,7 +719,7 @@ int MIHAWKCPLD::checkFault(int reg)
     if (statusValue < 0)
     {
         std::cerr << "i2c_smbus_read_byte_data failed \n";
-        result = 0;
+        return result;
     }
     else
     {

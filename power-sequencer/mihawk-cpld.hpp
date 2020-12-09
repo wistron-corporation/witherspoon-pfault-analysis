@@ -120,12 +120,12 @@ class MIHAWKCPLD : public Device
     /**
      * The flag of Mowgli's HDD-fault status
      */
-    bool faultcodeMask;
+    bool faultcodeMask = false;
 
     /**
      * The flag of Mowgli's HDD-rebuild status
      */
-    bool rebuildcodeMask;
+    bool rebuildcodeMask = false;
 
     enum class ErrorCode : int
     {
