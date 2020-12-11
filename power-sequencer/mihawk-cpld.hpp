@@ -58,10 +58,8 @@ class MIHAWKCPLD : public Device
 
   private:
     /**
-     * If checkPoweronFault() or checkPowerreadyFault()
-     * returns "true", use readFromCPLDErrorCode()
-     * to read CPLD-error-code-register
-     * to analyze the fail reason.
+     * Use readFromCPLDErrorCode() to read CPLD-error-code-register
+     * to analyze the fail reason or status.
      *
      * @param[in] statusReg - I2C's statusReg, slaveAddr
      * offset.
@@ -70,18 +68,10 @@ class MIHAWKCPLD : public Device
      * offset 0x21, power_ready-errorcode-register is on
      * slaveAddr offset 0x22.
      *
-     * @return int - the error-code value which is read on
+     * @return int - the value which is read on
      * CPLD-error-code-register.
      */
     int readFromCPLDErrorCode(int statusReg);
-
-    /**
-     * Confirm the Mowgli's HDD status(fault or rebuild).
-     *
-     * @param[in] statusReg - I2C's statusReg, slaveAddr
-     * offset.
-     */
-    int checkFault(int statusReg);
 
     /**
      * Checks for PoweronFault on Mihawk's
@@ -390,6 +380,17 @@ class MIHAWKCPLD : public Device
         _1 = 2
     };
 
+    /**
+     * Confirm the Mowgli's HDDFault status.
+     *
+     * @param[in] statusReg - I2C's statusReg, slaveAddr
+     * offset.
+     *
+     * @return HDDRebuild - the HDDFault status which is read
+     * on CPLD-error-code-register.
+     */
+    HDDErrorCode checkHDDError(int statusReg);
+
     enum class HDDRebuildCode : int
     {
         /**
@@ -410,6 +411,17 @@ class MIHAWKCPLD : public Device
          */
         _2 = 2
     };
+
+    /**
+     * Confirm the Mowgli's HDDRebuild status.
+     *
+     * @param[in] statusReg - I2C's statusReg, slaveAddr
+     * offset.
+     *
+     * @return HDDRebuild - the HDDRebuild status which is read
+     * on CPLD-error-code-register.
+     */
+    HDDRebuildCode checkHDDRebuild(int statusReg);
 };
 
 } // namespace power
