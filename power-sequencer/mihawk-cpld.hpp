@@ -381,7 +381,7 @@ class MIHAWKCPLD : public Device
     };
 
     /**
-     * Confirm the Mowgli's HDDFault status(fault or rebuild).
+     * Confirm the Mowgli's HDDError status.
      *
      * @param[in] statusReg - I2C's statusReg, slaveAddr
      * offset.
@@ -413,7 +413,7 @@ class MIHAWKCPLD : public Device
     };
 
     /**
-     * Confirm the Mowgli's HDDRebuild status(fault or rebuild).
+     * Confirm the Mowgli's HDDRebuild status.
      *
      * @param[in] statusReg - I2C's statusReg, slaveAddr
      * offset.
