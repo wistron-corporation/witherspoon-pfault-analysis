@@ -681,36 +681,34 @@ void MIHAWKCPLD::clearCPLDregister()
 // Check for Mowgli's HDDFault status
 MIHAWKCPLD::HDDErrorCode MIHAWKCPLD::checkHDDError(int statusReg)
 {
-    HDDErrorCode result;
     if ((readFromCPLDErrorCode(statusReg)) & 1)
     {
-        return result = static_cast<HDDErrorCode>(1);
+        return HDDErrorCode::_0;
     }
     else if (((readFromCPLDErrorCode(statusReg)) >> 1) & 1)
     {
-        return result = static_cast<HDDErrorCode>(2);
+        return HDDErrorCode::_1;
     }
     else
     {
-        return result = static_cast<HDDErrorCode>(0);
+        return static_cast<HDDErrorCode>(0);
     }
 }
 
 // Check for Mowgli's HDDRebuild status
 MIHAWKCPLD::HDDRebuildCode MIHAWKCPLD::checkHDDRebuild(int statusReg)
 {
-    HDDRebuildCode result;
     if ((readFromCPLDErrorCode(statusReg)) & 1)
     {
-        return result = static_cast<HDDRebuildCode>(1);
+        return HDDRebuildCode::_1;
     }
     else if (((readFromCPLDErrorCode(statusReg)) >> 1) & 1)
     {
-        return result = static_cast<HDDRebuildCode>(2);
+        return HDDRebuildCode::_2;
     }
     else
     {
-        return result = static_cast<HDDRebuildCode>(0);
+        return HDDRebuildCode::_0;
     }
 }
 
