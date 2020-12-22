@@ -135,6 +135,30 @@
 - name: ErrorCode36
   description: CPLD's error reason is PSU0&PSU1_pgood fail
 
+- name: ErrorCode37
+  description: CPLD's error reason is P1V35_pgood Fail
+
+- name: ErrorCode38
+  description: CPLD's error reason is P1V2_pgood Fail
+
+- name: ErrorCode39
+  description: CPLD's error reason is P0V92_pgood Fail
+
+- name: HDDErrorCode0
+  description: CPLD's error reason is HDD_0 fail
+  
+- name: HDDErrorCode1
+  description: CPLD's error reason is HDD_1 fail
+
+- name: HDDRebuildCode0
+  description: HDD_0 or HDD_1 ends to rebuild
+
+- name: HDDRebuildCode1
+  description: HDD_0 starts to rebuild
+
+- name: HDDRebuildCode2
+  description: HDD_1 starts to rebuild
+
 - name: PowerSequencerVoltageFault
   description: The power sequencer chip detected a voltage fault
 

@@ -163,6 +163,30 @@
 - name: ErrorCode36
   level: ERR
 
+- name: ErrorCode37
+  level: ERR
+
+- name: ErrorCode38
+  level: ERR
+
+- name: ErrorCode39
+  level: ERR
+
+- name: HDDErrorCode0
+  level: ERR
+
+- name: HDDErrorCode1
+  level: ERR
+
+- name: HDDRebuildCode0
+  level: INFO
+
+- name: HDDRebuildCode1
+  level: INFO
+
+- name: HDDRebuildCode2
+  level: INFO
+
 - name: PowerSequencerVoltageFault
   level: ERR
   meta:
