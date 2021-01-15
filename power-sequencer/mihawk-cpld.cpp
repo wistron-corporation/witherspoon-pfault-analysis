@@ -35,6 +35,9 @@ extern "C" {
 #endif
 #define slaveAddr 0x40
 
+// SMLink Status Register(PSU status Register)
+const static constexpr size_t StatusReg_0 = 0x05;
+
 // SMLink Status Register(Interrupt-control-bit Register)
 const static constexpr size_t StatusReg_1 = 0x20;
 
@@ -408,8 +411,8 @@ void MIHAWKCPLD::analyze()
                         errorcodeMask = 1;
                         break;
                 }
-                clearCPLDregister();
             }
+            clearCPLDregister();
         }
     }
 
@@ -670,10 +673,17 @@ void MIHAWKCPLD::clearCPLDregister()
         close(fd);
     }
 
-    // clear CPLD_register by writing 0x01 to it.
-    if ((i2c_smbus_write_byte_data(fd, StatusReg_1, 0x01)) < 0)
+    // check psu pgood status.
+    int checkpsu = i2c_smbus_read_byte_data(fd, StatusReg_0);
+
+    // check one of both psus pgood status before clear CPLD_register.
+    if(((checkpsu >> 1) & 1) || ((checkpsu >> 2) & 1))
     {
-        std::cerr << "i2c_smbus_write_byte_data failed \n";
+        // clear CPLD_register by writing 0x01 to it.
+        if ((i2c_smbus_write_byte_data(fd, StatusReg_1, 0x01)) < 0)
+        {
+            std::cerr << "i2c_smbus_write_byte_data failed \n";
+        }
     }
     close(fd);
 }
