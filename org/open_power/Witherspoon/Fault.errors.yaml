@@ -144,6 +144,9 @@
 - name: ErrorCode39
   description: CPLD's error reason is P0V92_pgood Fail
 
+- name: ErrorCode40
+  description: CPLD's error reason is P1V0_pgood Fail
+
 - name: HDDErrorCode0
   description: CPLD's error reason is HDD_0 fail
   

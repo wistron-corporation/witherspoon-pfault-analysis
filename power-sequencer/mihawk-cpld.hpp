@@ -361,7 +361,13 @@ class MIHAWKCPLD : public Device
          * The definition of error-code:
          * P0V92_PGOOD fail.
          */
-        _39 = 38
+        _39 = 38,
+
+        /**
+         * The definition of error-code:
+         * P1V0_PGOOD fail.
+         */
+        _40 = 39
 
     };
 
