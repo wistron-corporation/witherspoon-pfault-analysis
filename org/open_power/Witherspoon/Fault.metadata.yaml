@@ -172,6 +172,9 @@
 - name: ErrorCode39
   level: ERR
 
+- name: ErrorCode40
+  level: ERR
+
 - name: HDDErrorCode0
   level: ERR
 

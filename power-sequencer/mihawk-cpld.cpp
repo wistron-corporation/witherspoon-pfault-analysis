@@ -202,6 +202,9 @@ void MIHAWKCPLD::onFailure()
             case ErrorCode::_39:
                 report<ErrorCode39>();
                 break;
+            case ErrorCode::_40:
+                report<ErrorCode40>();
+                break;
 #endif
             default:
                 // If the errorcode isn't 1~39(Mihawk:1~36),
@@ -399,6 +402,10 @@ void MIHAWKCPLD::analyze()
                         break;
                     case ErrorCode::_39:
                         report<ErrorCode39>();
+                        errorcodeMask = 1;
+                        break;
+                    case ErrorCode::_40:
+                        report<ErrorCode40>();
                         errorcodeMask = 1;
                         break;
 #endif
