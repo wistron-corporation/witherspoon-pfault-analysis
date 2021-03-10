@@ -207,7 +207,7 @@ void MIHAWKCPLD::onFailure()
                 break;
 #endif
             default:
-                // If the errorcode isn't 1~39(Mihawk:1~36),
+                // If the errorcode isn't 1~40(Mihawk:1~36),
                 // it indicates that the CPLD register
                 // has a reading issue,
                 // so the errorcode0 error is reported.
@@ -437,6 +437,10 @@ void MIHAWKCPLD::analyze()
         HDDErrorCode code = checkHDDError(StatusReg_4);
         switch (code)
         {
+            case HDDErrorCode::_noFault:
+                // No HDD-fault.
+                faultcodeMask = false;
+                break;
             case HDDErrorCode::_0:
                 report<HDDErrorCode0>();
                 faultcodeMask = true;
@@ -446,7 +450,12 @@ void MIHAWKCPLD::analyze()
                 faultcodeMask = true;
                 break;
             default:
-                faultcodeMask = false;
+                // If the returned value isn't 0 or 1 or 2,
+                // it means there are the both of HDD-faults.
+                // Report the faults of them.
+                report<HDDErrorCode0>();
+                report<HDDErrorCode1>();
+                faultcodeMask = true;
                 break;
         }
     }
@@ -684,7 +693,7 @@ void MIHAWKCPLD::clearCPLDregister()
     int checkpsu = i2c_smbus_read_byte_data(fd, StatusReg_0);
 
     // check one of both psus pgood status before clear CPLD_register.
-    if(((checkpsu >> 1) & 1) || ((checkpsu >> 2) & 1))
+    if (((checkpsu >> 1) & 1) || ((checkpsu >> 2) & 1))
     {
         // clear CPLD_register by writing 0x01 to it.
         if ((i2c_smbus_write_byte_data(fd, StatusReg_1, 0x01)) < 0)
@@ -698,17 +707,27 @@ void MIHAWKCPLD::clearCPLDregister()
 // Check for Mowgli's HDDFault status
 MIHAWKCPLD::HDDErrorCode MIHAWKCPLD::checkHDDError(int statusReg)
 {
-    if ((readFromCPLDErrorCode(statusReg)) & 1)
+    if ((((readFromCPLDErrorCode(statusReg)) >> 1) & 1) &&
+        ((readFromCPLDErrorCode(statusReg)) & 1))
     {
-        return HDDErrorCode::_0;
-    }
-    else if (((readFromCPLDErrorCode(statusReg)) >> 1) & 1)
-    {
-        return HDDErrorCode::_1;
+        return static_cast<HDDErrorCode>(readFromCPLDErrorCode(statusReg));
     }
     else
     {
-        return static_cast<HDDErrorCode>(0);
+        if ((readFromCPLDErrorCode(statusReg)) & 1)
+        {
+            return HDDErrorCode::_0;
+        }
+        else if (((readFromCPLDErrorCode(statusReg)) >> 1) & 1)
+        {
+            return HDDErrorCode::_1;
+        }
+        else
+        {
+            // There is no HDD-fault if the value
+            // of readFromCPLDErrorCode(statusReg) is 0.
+            return static_cast<HDDErrorCode>(0);
+        }
     }
 }
 
