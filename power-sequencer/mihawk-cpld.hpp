@@ -375,6 +375,12 @@ class MIHAWKCPLD : public Device
     {
         /**
          * The definition of CPLD-HDD-Fault-code:
+         * no HDD-fault.
+         */
+        _noFault = 0,
+
+        /**
+         * The definition of CPLD-HDD-Fault-code:
          * HDD_0 fail.
          */
         _0 = 1,
