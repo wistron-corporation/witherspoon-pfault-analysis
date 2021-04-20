@@ -207,7 +207,7 @@ void MIHAWKCPLD::onFailure()
                 break;
 #endif
             default:
-                // If the errorcode isn't 1~40(Mihawk:1~36),
+                // If the errorcode isn't 1~39(Mihawk:1~36),
                 // it indicates that the CPLD register
                 // has a reading issue,
                 // so the errorcode0 error is reported.
@@ -440,22 +440,39 @@ void MIHAWKCPLD::analyze()
             case HDDErrorCode::_noFault:
                 // No HDD-fault.
                 faultcodeMask = false;
+                recheck = 0;
                 break;
             case HDDErrorCode::_0:
-                report<HDDErrorCode0>();
-                faultcodeMask = true;
+                recheck++;
+                if (recheck >= 3)
+                {
+                    report<HDDErrorCode0>();
+                    recheck = 0;
+                    faultcodeMask = true;
+                }
                 break;
             case HDDErrorCode::_1:
-                report<HDDErrorCode1>();
-                faultcodeMask = true;
+                recheck++;
+                if (recheck >= 3)
+                {
+                    report<HDDErrorCode1>();
+                    recheck = 0;
+                    faultcodeMask = true;
+                }
+                break;
+            case HDDErrorCode::_allFault:
+                recheck++;
+                if (recheck >= 3)
+                {
+                    report<HDDErrorCode0>();
+                    report<HDDErrorCode1>();
+                    recheck = 0;
+                    faultcodeMask = true;
+                }
                 break;
             default:
-                // If the returned value isn't 0 or 1 or 2,
-                // it means there are the both of HDD-faults.
-                // Report the faults of them.
-                report<HDDErrorCode0>();
-                report<HDDErrorCode1>();
-                faultcodeMask = true;
+                faultcodeMask = false;
+                recheck = 0;
                 break;
         }
     }
@@ -707,27 +724,17 @@ void MIHAWKCPLD::clearCPLDregister()
 // Check for Mowgli's HDDFault status
 MIHAWKCPLD::HDDErrorCode MIHAWKCPLD::checkHDDError(int statusReg)
 {
-    if ((((readFromCPLDErrorCode(statusReg)) >> 1) & 1) &&
-        ((readFromCPLDErrorCode(statusReg)) & 1))
+    if ((readFromCPLDErrorCode(statusReg)) & 1)
     {
-        return static_cast<HDDErrorCode>(readFromCPLDErrorCode(statusReg));
+        return HDDErrorCode::_0;
+    }
+    else if (((readFromCPLDErrorCode(statusReg)) >> 1) & 1)
+    {
+        return HDDErrorCode::_1;
     }
     else
     {
-        if ((readFromCPLDErrorCode(statusReg)) & 1)
-        {
-            return HDDErrorCode::_0;
-        }
-        else if (((readFromCPLDErrorCode(statusReg)) >> 1) & 1)
-        {
-            return HDDErrorCode::_1;
-        }
-        else
-        {
-            // There is no HDD-fault if the value
-            // of readFromCPLDErrorCode(statusReg) is 0.
-            return static_cast<HDDErrorCode>(0);
-        }
+        return static_cast<HDDErrorCode>(0);
     }
 }
 

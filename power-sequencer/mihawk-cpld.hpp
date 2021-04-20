@@ -117,6 +117,8 @@ class MIHAWKCPLD : public Device
      */
     bool rebuildcodeMask = false;
 
+    int recheck = 0;
+
     enum class ErrorCode : int
     {
         /**
@@ -375,7 +377,7 @@ class MIHAWKCPLD : public Device
     {
         /**
          * The definition of CPLD-HDD-Fault-code:
-         * no HDD-fault.
+         * no fail.
          */
         _noFault = 0,
 
@@ -389,7 +391,13 @@ class MIHAWKCPLD : public Device
          * The definition of CPLD-HDD-Fault-code:
          * HDD_1 fail.
          */
-        _1 = 2
+        _1 = 2,
+
+        /**
+         * The definition of CPLD-HDD-Fault-code:
+         * all of HDDs are fail.
+         */
+        _allFault = 3
     };
 
     /**
