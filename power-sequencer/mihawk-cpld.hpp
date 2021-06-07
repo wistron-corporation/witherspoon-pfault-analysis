@@ -117,6 +117,11 @@ class MIHAWKCPLD : public Device
      */
     bool rebuildcodeMask = false;
 
+    /**
+     * The parameter for rechecking HDDError counts.
+     */
+    int recheck = 0;
+
     enum class ErrorCode : int
     {
         /**
@@ -389,7 +394,13 @@ class MIHAWKCPLD : public Device
          * The definition of CPLD-HDD-Fault-code:
          * HDD_1 fail.
          */
-        _1 = 2
+        _1 = 2,
+
+        /**
+         * The definition of CPLD-HDD-Fault-code:
+         * all HDD-fault.
+         */
+        _allFault = 3
     };
 
     /**

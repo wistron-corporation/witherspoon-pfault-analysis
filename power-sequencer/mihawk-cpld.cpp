@@ -440,22 +440,39 @@ void MIHAWKCPLD::analyze()
             case HDDErrorCode::_noFault:
                 // No HDD-fault.
                 faultcodeMask = false;
+                recheck = 0;
                 break;
             case HDDErrorCode::_0:
-                report<HDDErrorCode0>();
-                faultcodeMask = true;
+                recheck++;
+                if (recheck >= 3)
+                {
+                    report<HDDErrorCode0>();
+                    faultcodeMask = true;
+                    recheck = 0;
+                }
                 break;
             case HDDErrorCode::_1:
-                report<HDDErrorCode1>();
-                faultcodeMask = true;
+                recheck++;
+                if (recheck >= 3)
+                {
+                    report<HDDErrorCode1>();
+                    faultcodeMask = true;
+                    recheck = 0;
+                }
+                break;
+            case HDDErrorCode::_allFault:
+                recheck++;
+                if (recheck >= 3)
+                {
+                    report<HDDErrorCode0>();
+                    report<HDDErrorCode1>();
+                    faultcodeMask = true;
+                    recheck = 0;
+                }
                 break;
             default:
-                // If the returned value isn't 0 or 1 or 2,
-                // it means there are the both of HDD-faults.
-                // Report the faults of them.
-                report<HDDErrorCode0>();
-                report<HDDErrorCode1>();
-                faultcodeMask = true;
+                faultcodeMask = false;
+                recheck = 0;
                 break;
         }
     }
@@ -466,15 +483,23 @@ void MIHAWKCPLD::analyze()
         case HDDRebuildCode::_1:
             if (!rebuildcodeMask)
             {
-                report<HDDRebuildCode1>();
-                rebuildcodeMask = true;
+                sleep(5);
+                if (checkHDDRebuild(StatusReg_5) == HDDRebuildCode::_1)
+                {
+                    report<HDDRebuildCode1>();
+                    rebuildcodeMask = true;
+                }
             }
             break;
         case HDDRebuildCode::_2:
             if (!rebuildcodeMask)
             {
-                report<HDDRebuildCode2>();
-                rebuildcodeMask = true;
+                sleep(5);
+                if (checkHDDRebuild(StatusReg_5) == HDDRebuildCode::_2)
+                {
+                    report<HDDRebuildCode2>();
+                    rebuildcodeMask = true;
+                }
             }
             break;
         default:
